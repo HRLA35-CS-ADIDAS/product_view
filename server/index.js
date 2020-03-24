@@ -12,8 +12,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(morgan('combined'));
 
-app.use('/', router)
-
 app.use('/', express.static(path.join(__dirname, '../client/dist')));
+
+app.use('/', router)
 
 app.listen(port, () => console.log(`You are listening on port ${port}!`))
