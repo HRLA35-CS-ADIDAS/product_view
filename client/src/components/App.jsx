@@ -50,7 +50,7 @@ class App extends React.Component {
 
                 <div className="product-container">
                     <div className="inner-product-container">
-                        {console.log('first', this.state.currentShoe.carousel_images)}
+                    {/* {console.log('hhh', this.state.currentShoe.carousel_images)} */}
                         <ProductDisplay images={this.state.currentShoe.carousel_images}/>
                         <ProductInfo />
 

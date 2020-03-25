@@ -14,7 +14,7 @@ class ProductInfo extends React.Component {
             <div className="product-description">
         <div className="product-description-box">
           <div className="product-information">
-            <span className="reviews">reviews/stars</span>
+            <div className="review-section">
             <div id="star-box">
               <svg className="stars" viewBox="0 0 15 15" xmlns="http://www.w3.org/2000/svg" data-di-res-id="110c95ee-8fb3a8b3" data-di-rand="1581107329323">
                       <path className="gl-star-rating__outline" fill="black" stroke="currentColor" strokeMiterlimit="10" d="M13.277,6.182L9.697,8.782L11.057,12.992L7.487,10.392L3.907,12.992L5.277,8.782L1.697,6.182L6.117,6.182L7.487,1.992L8.857,6.182L13.277,6.182Z"></path>
@@ -31,6 +31,8 @@ class ProductInfo extends React.Component {
               <svg className="stars" viewBox="0 0 15 15" xmlns="http://www.w3.org/2000/svg" data-di-res-id="110c95ee-8fb3a8b3" data-di-rand="1581107329323">
                       <path className="gl-star-rating__outline" fill="none" stroke="currentColor" strokeMiterlimit="10" d="M13.277,6.182L9.697,8.782L11.057,12.992L7.487,10.392L3.907,12.992L5.277,8.782L1.697,6.182L6.117,6.182L7.487,1.992L8.857,6.182L13.277,6.182Z"></path>
               </svg>
+            </div>
+              <span className="read-reviews">Read all 11 reviews</span>
             </div>
             <h2 className="shoe-type">MEN'S BASKETBALL</h2>
             <h3 className="shoe-name">MARQUEE BOOST LOW SHOES</h3>
