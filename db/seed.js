@@ -1,6 +1,6 @@
-const Shoe = require('./database.js');
+const Shoe = require('./index.js');
 // const Shoe = require('./schema.js')
-const data = require('../../shoes.json');
+const data = require('../shoes.json');
 
 var insertSeedData = function () {
     Shoe.insertMany(data)

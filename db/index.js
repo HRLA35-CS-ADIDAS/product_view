@@ -3,14 +3,16 @@ mongoose.connect('mongodb://localhost/shoes', { useNewUrlParser: true , useUnifi
 mongoose.Promise = global.Promise;
 
 var shoeSchema = mongoose.Schema({
-    image: String,
-    url: String,
-    name: String,
-    name_url: String,
-    type: String,
-    type_url: String,
-    price: String,
-    price_url: String
+  id: Number,
+  name: String,
+  current_price: Number,
+  old_price: Number,
+  category: String,
+  reviews: Number,
+  size: Array,
+  available_colors: Array,
+  carousel_images: Array,
+  related_shoes: Array
 })
 
 var Shoe = mongoose.model('Shoe', shoeSchema)
