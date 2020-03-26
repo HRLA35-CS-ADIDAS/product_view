@@ -1,53 +1,53 @@
 import React from 'react';
 import axios from 'axios';
+import Price from './Price.jsx';
 
 class ProductInfo extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-          oldPrice: this.props.shoe.old_price
-        }
-
+  constructor(props) {
+    super(props);
+    this.state = {
+      oldPrice: this.props.shoe.old_price
     }
-    render() {
+
+  }
+  render() {
 
 
-        return (
 
-            <div className="product-description">
+    var affirmPrice = this.props.shoe.current_price / 3
+
+    return (
+      <div className="product-description">
         <div className="product-description-box">
           <div className="product-information">
             <div className="review-section">
-            <div id="star-box">
-              <svg className="stars" viewBox="0 0 15 15" xmlns="http://www.w3.org/2000/svg" data-di-res-id="110c95ee-8fb3a8b3" data-di-rand="1581107329323">
-                      <path className="gl-star-rating__outline" fill="black" stroke="currentColor" strokeMiterlimit="10" d="M13.277,6.182L9.697,8.782L11.057,12.992L7.487,10.392L3.907,12.992L5.277,8.782L1.697,6.182L6.117,6.182L7.487,1.992L8.857,6.182L13.277,6.182Z"></path>
-              </svg>
-              <svg className="stars" viewBox="0 0 15 15" xmlns="http://www.w3.org/2000/svg" data-di-res-id="110c95ee-8fb3a8b3" data-di-rand="1581107329323">
-                      <path className="gl-star-rating__outline" fill="black" stroke="currentColor" strokeMiterlimit="10" d="M13.277,6.182L9.697,8.782L11.057,12.992L7.487,10.392L3.907,12.992L5.277,8.782L1.697,6.182L6.117,6.182L7.487,1.992L8.857,6.182L13.277,6.182Z"></path>
-              </svg>
-              <svg className="stars" viewBox="0 0 15 15" xmlns="http://www.w3.org/2000/svg" data-di-res-id="110c95ee-8fb3a8b3" data-di-rand="1581107329323">
-                      <path className="gl-star-rating__outline" fill="black" stroke="currentColor" strokeMiterlimit="10" d="M13.277,6.182L9.697,8.782L11.057,12.992L7.487,10.392L3.907,12.992L5.277,8.782L1.697,6.182L6.117,6.182L7.487,1.992L8.857,6.182L13.277,6.182Z"></path>
-              </svg>
-              <svg className="stars" viewBox="0 0 15 15" xmlns="http://www.w3.org/2000/svg" data-di-res-id="110c95ee-8fb3a8b3" data-di-rand="1581107329323">
-                      <path className="gl-star-rating__outline" fill="black" stroke="currentColor" strokeMiterlimit="10" d="M13.277,6.182L9.697,8.782L11.057,12.992L7.487,10.392L3.907,12.992L5.277,8.782L1.697,6.182L6.117,6.182L7.487,1.992L8.857,6.182L13.277,6.182Z"></path>
-              </svg>
-              <svg className="stars" viewBox="0 0 15 15" xmlns="http://www.w3.org/2000/svg" data-di-res-id="110c95ee-8fb3a8b3" data-di-rand="1581107329323">
-                      <path className="gl-star-rating__outline" fill="none" stroke="currentColor" strokeMiterlimit="10" d="M13.277,6.182L9.697,8.782L11.057,12.992L7.487,10.392L3.907,12.992L5.277,8.782L1.697,6.182L6.117,6.182L7.487,1.992L8.857,6.182L13.277,6.182Z"></path>
-              </svg>
-            </div>
+              <div id="star-box">
+                <svg className="stars" viewBox="0 0 15 15" xmlns="http://www.w3.org/2000/svg" data-di-res-id="110c95ee-8fb3a8b3" data-di-rand="1581107329323">
+                  <path className="gl-star-rating__outline" fill="black" stroke="currentColor" strokeMiterlimit="10" d="M13.277,6.182L9.697,8.782L11.057,12.992L7.487,10.392L3.907,12.992L5.277,8.782L1.697,6.182L6.117,6.182L7.487,1.992L8.857,6.182L13.277,6.182Z"></path>
+                </svg>
+                <svg className="stars" viewBox="0 0 15 15" xmlns="http://www.w3.org/2000/svg" data-di-res-id="110c95ee-8fb3a8b3" data-di-rand="1581107329323">
+                  <path className="gl-star-rating__outline" fill="black" stroke="currentColor" strokeMiterlimit="10" d="M13.277,6.182L9.697,8.782L11.057,12.992L7.487,10.392L3.907,12.992L5.277,8.782L1.697,6.182L6.117,6.182L7.487,1.992L8.857,6.182L13.277,6.182Z"></path>
+                </svg>
+                <svg className="stars" viewBox="0 0 15 15" xmlns="http://www.w3.org/2000/svg" data-di-res-id="110c95ee-8fb3a8b3" data-di-rand="1581107329323">
+                  <path className="gl-star-rating__outline" fill="black" stroke="currentColor" strokeMiterlimit="10" d="M13.277,6.182L9.697,8.782L11.057,12.992L7.487,10.392L3.907,12.992L5.277,8.782L1.697,6.182L6.117,6.182L7.487,1.992L8.857,6.182L13.277,6.182Z"></path>
+                </svg>
+                <svg className="stars" viewBox="0 0 15 15" xmlns="http://www.w3.org/2000/svg" data-di-res-id="110c95ee-8fb3a8b3" data-di-rand="1581107329323">
+                  <path className="gl-star-rating__outline" fill="black" stroke="currentColor" strokeMiterlimit="10" d="M13.277,6.182L9.697,8.782L11.057,12.992L7.487,10.392L3.907,12.992L5.277,8.782L1.697,6.182L6.117,6.182L7.487,1.992L8.857,6.182L13.277,6.182Z"></path>
+                </svg>
+                <svg className="stars" viewBox="0 0 15 15" xmlns="http://www.w3.org/2000/svg" data-di-res-id="110c95ee-8fb3a8b3" data-di-rand="1581107329323">
+                  <path className="gl-star-rating__outline" fill="none" stroke="currentColor" strokeMiterlimit="10" d="M13.277,6.182L9.697,8.782L11.057,12.992L7.487,10.392L3.907,12.992L5.277,8.782L1.697,6.182L6.117,6.182L7.487,1.992L8.857,6.182L13.277,6.182Z"></path>
+                </svg>
+              </div>
               <span className="read-reviews">Read all {this.props.shoe.reviews} reviews</span>
             </div>
-            <h2 className="shoe-type">MEN'S BASKETBALL</h2>
-            <h3 className="shoe-name">MARQUEE BOOST LOW SHOES</h3>
+            <h2 className="shoe-type">{this.props.shoe.category}</h2>
+            <h3 className="shoe-name">{this.props.shoe.name}</h3>
 
-            <div className="price-div">
-              <span className="new-price">${this.props.shoe.current_price}</span>
-              <span className="old-price">${this.props.shoe.old_price}</span>
-            </div>
+            <Price oldPrice={this.props.shoe.old_price} newPrice={this.props.shoe.current_price} />
 
             <div className="installment-message">
               <span className="affirm">or 3 interest-free payments of </span>
-              <span className="installment-price">$20.00</span>
+              <span className="installment-price">${affirmPrice.toFixed(2)}</span>
               <span className="affirm"> with Affirm.</span>
               <div className="learn-box">
                 <span className="learn-more">Learn More</span>
@@ -63,8 +63,25 @@ class ProductInfo extends React.Component {
 
             <div className="colors">
               <h5 className="available-colors">Available Colors</h5>
-              <span className="color-types">carbon / glow green / grey</span>
+              <span className="color-types">{this.props.shoe.available_colors.join(' / ')}</span>
             </div>
+
+            <div className="color-wrapper">
+              <div className="selection-box">
+                <div className="tick-icon">
+                  <svg class="check-icon" data-di-res-id="b2f2def1-1a5917fc" data-di-rand="1585212244738">
+                  <svg id="checkmark" viewBox="0 0 19 19"><path fill="none" stroke="currentColor" stroke-linecap="square" stroke-miterlimit="10" d="M2.5 10.5l4 4 10-10"></path></svg>
+                  </svg>
+                </div>
+                <div className="circle-image">
+                </div>
+                {/* <use xlink:href="#checkmark"></use> */}
+              </div>
+
+            </div>
+
+
+
 
             <div className="cart-options">
               <div className="size-guide-container">
@@ -87,17 +104,17 @@ class ProductInfo extends React.Component {
               <div id="paypal">
                 Buy now, pay over time with PayPal CREDIT
               </div>
-              
+
             </div>
 
 
           </div>
 
         </div>
-    
-      </div>
-        )
-    }
+
+      </div >
+    )
+  }
 }
 
 export default ProductInfo;

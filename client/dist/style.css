@@ -412,6 +412,10 @@ body {
     text-decoration: line-through;
 }
 
+.only-price {
+    color: black;
+}
+
 .installment-message {
     margin-top: 5px;
     display: block;
@@ -509,6 +513,59 @@ body {
     font-family: AdihausDIN,Helvetica,Arial,sans-serif;
     font-weight: 400;
     display: block;
+}
+
+.color-wrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 10px;
+    width: 100%;
+}
+
+.selection-box {
+    flex: 1 0 auto;
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: calc(25% - 5px);
+    max-width: 70px;
+    cursor: pointer;
+    margin: 0 10px 10px 0;
+    display: block;
+    position: relative;
+    height: 70px;
+}
+
+.tick-icon {
+    border-radius: 50%;
+    background-color: #000;
+    position: absolute;
+    right: 0;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.circle-image {
+    background: url("https://assets.adidas.com/images/w_100,h_100,f_auto,q_auto:sensitive,fl_lossy/9e15205d36ca4f6fb935ab3800c22e48_9366/NMD_R1_Shoes_Black_FV7969_01_standard.jpg");
+    border-radius: 50%;
+    padding-bottom: 100%;
+    background-size: cover;
+}
+
+.mini-circle {
+    height: 19px;
+    width: 19px;
+    color: #fff;
+    display: inline-block;
+    vertical-align: text-top;
+}
+
+#checkmark {
+    color: #fff;
+    -webkit-font-smoothing: antialiased;
 }
 
 .cart-options {

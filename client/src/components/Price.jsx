@@ -1,22 +1,30 @@
-// import React from 'react';
-// import axios from 'axios';
+import React from 'react';
+import axios from 'axios';
 
-// class Price extends React.Component {
-//     constructor(props) {
-//         super(props);
-//         this.state = {
-//         }
-//     }
+class Price extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            oldPrice: this.props.oldPrice
+        }
+    }
 
-//     render() {
-//         return (
-//             <p>hi</p>
-//             // <div className="price-div">
-//             //     <span className="new-price">${this.props.shoe.current_price}</span>
-//             //     <span className="old-price">${this.props.shoe.old_price}</span>
-//             // </div>
-//         )
-//     }
-// }
+    render() {
+        if (this.state.oldPrice === null) {
+            return (
+                <div className="price-div">
+                    <span className="only-price">${this.props.newPrice}</span>
+                </div>
+            )
+        } else {
+            return (
+                <div className="price-div">
+                    <span className="new-price">${this.props.newPrice}</span>
+                    <span className="old-price">${this.props.oldPrice}</span>
+                </div>
+            )
+        }
+    }
+}
 
-//     export default Price;
+export default Price;
