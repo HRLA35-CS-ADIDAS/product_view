@@ -5,10 +5,13 @@ class ProductInfo extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+          oldPrice: this.props.shoe.old_price
         }
 
     }
     render() {
+
+
         return (
 
             <div className="product-description">
@@ -32,14 +35,14 @@ class ProductInfo extends React.Component {
                       <path className="gl-star-rating__outline" fill="none" stroke="currentColor" strokeMiterlimit="10" d="M13.277,6.182L9.697,8.782L11.057,12.992L7.487,10.392L3.907,12.992L5.277,8.782L1.697,6.182L6.117,6.182L7.487,1.992L8.857,6.182L13.277,6.182Z"></path>
               </svg>
             </div>
-              <span className="read-reviews">Read all 11 reviews</span>
+              <span className="read-reviews">Read all {this.props.shoe.reviews} reviews</span>
             </div>
             <h2 className="shoe-type">MEN'S BASKETBALL</h2>
             <h3 className="shoe-name">MARQUEE BOOST LOW SHOES</h3>
 
             <div className="price-div">
-              <span className="new-price">$60</span>
-              <span className="old-price">$120</span>
+              <span className="new-price">${this.props.shoe.current_price}</span>
+              <span className="old-price">${this.props.shoe.old_price}</span>
             </div>
 
             <div className="installment-message">
