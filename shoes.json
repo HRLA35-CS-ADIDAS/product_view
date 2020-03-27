@@ -9,19 +9,19 @@
         "size": [ "M 4 / W 5", "M 4.5 / W 5.5" ,"M 5 / W 6  ","M 5.5 / W 6.5","M 6 / W 7  ","M 6.5 / W 7.5","M 7 / W 8","M 7.5 / W 8.5" ,"M 8 / W 9"  ,"M 8.5 / W 9.5"  ,"M 9 / W 10 ","M 9.5 / W 10.5","M 10 / W 11","M 10.5 / W 11.5","M 11 / W 12","M 11.5 / W 12.5","M 12 / W 13","M 12.5 / W 13.5" ,"M 13 / W 14","M 13.5 / W 14.5","M 14 / W 15"],
         "available_colors": ["CORE BLACK", "CORE BLACK", "CARBON"],
         "carousel_images": ["https://adidas-testbucket.s3-us-west-1.amazonaws.com/NMD_R1_Shoes_Black_FV7969_01_standard.jpg", "https://adidas-testbucket.s3-us-west-1.amazonaws.com/8e6e2cd6e6ec424f98fbab3800c235d1_9366.webp", "https://adidas-testbucket.s3-us-west-1.amazonaws.com/12fbe67574d44476b545ab480120201c_9366.webp", "https://adidas-testbucket.s3-us-west-1.amazonaws.com/206db773b3444f45b4e1ab3800c253f0_9366.webp", "https://adidas-testbucket.s3-us-west-1.amazonaws.com/6b835f38bfe6440ca914ab3800c24b4f_9366.webp", "https://adidas-testbucket.s3-us-west-1.amazonaws.com/d687864e981747e8aa9aab3800c243d0_9366.webp", "https://adidas-testbucket.s3-us-west-1.amazonaws.com/e6b8c1009b574fd4a0edab3800c23cab_9366.webp"],
-        "related_shoes": [2]
+        "related_shoes": ["https://adidas-testbucket.s3-us-west-1.amazonaws.com/NMD_R1_Shoes_Black_FV7969_01_standard.jpg", "https://adidas-testbucket.s3-us-west-1.amazonaws.com/NMD_R1+Shoes/f681053480464ff8bea5ab1b011351ba_9366.webp"]
        },
        {
         "id": 2,
         "name": "NMD_R1 Shoes",
-        "current_price": 130,
-        "old_price": null,
+        "current_price": 150,
+        "old_price": 130,
         "category": "Originals",
-        "reviews": 10,
+        "reviews": 11,
         "size": [ "M 4 / W 5", "M 4.5 / W 5.5" ,"M 5 / W 6  ","M 5.5 / W 6.5","M 6 / W 7  ","M 6.5 / W 7.5","M 7 / W 8","M 7.5 / W 8.5" ,"M 8 / W 9"  ,"M 8.5 / W 9.5"  ,"M 9 / W 10 ","M 9.5 / W 10.5","M 10 / W 11","M 10.5 / W 11.5","M 11 / W 12","M 11.5 / W 12.5","M 12 / W 13","M 12.5 / W 13.5" ,"M 13 / W 14","M 13.5 / W 14.5","M 14 / W 15"],
         "available_colors": ["CLOUD WHITE", "CLOUD WHITE", "CORE BLACK"],
         "carousel_images": ["https://adidas-testbucket.s3-us-west-1.amazonaws.com/NMD_R1+Shoes/f681053480464ff8bea5ab1b011351ba_9366.webp", "https://adidas-testbucket.s3-us-west-1.amazonaws.com/NMD_R1+Shoes/1076a669383e44f48ff6ab1b01136ccb_9366.webp", "https://adidas-testbucket.s3-us-west-1.amazonaws.com/NMD_R1+Shoes/4de6ef184bdd497ba023ab1b01137e33_9366.webp", "https://adidas-testbucket.s3-us-west-1.amazonaws.com/NMD_R1+Shoes/7571e8b2a0d542d8ba6dab1b01138790_9366.webp", "https://adidas-testbucket.s3-us-west-1.amazonaws.com/NMD_R1+Shoes/88c66343605e4c95b403ab1b0113971e_9366.webp", "https://adidas-testbucket.s3-us-west-1.amazonaws.com/NMD_R1+Shoes/88c66343605e4c95b403ab1b0113971e_9366.webp", "https://adidas-testbucket.s3-us-west-1.amazonaws.com/NMD_R1+Shoes/NMD_R1_Shoes_White_FV8151_42_detail.jpg", "https://adidas-testbucket.s3-us-west-1.amazonaws.com/NMD_R1+Shoes/af66e3aaabe3454a9073ab1b01135a9d_9366.webp", "https://adidas-testbucket.s3-us-west-1.amazonaws.com/NMD_R1+Shoes/bb2c046a143e4bb5af0cab1900c031c2_9366.webp", "https://adidas-testbucket.s3-us-west-1.amazonaws.com/NMD_R1+Shoes/f78a9f6af72e417f95e1ab1b0113756f_9366.webp"],
-        "related_shoes": [1]
+        "related_shoes": ["https://adidas-testbucket.s3-us-west-1.amazonaws.com/NMD_R1_Shoes_Black_FV7969_01_standard.jpg", "https://adidas-testbucket.s3-us-west-1.amazonaws.com/NMD_R1+Shoes/f681053480464ff8bea5ab1b011351ba_9366.webp"]
        }
       ]
      

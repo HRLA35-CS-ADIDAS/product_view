@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import Price from './Price.jsx';
+import Colors from './Colors.jsx';
 
 class ProductInfo extends React.Component {
   constructor(props) {
@@ -60,26 +61,7 @@ class ProductInfo extends React.Component {
                 <span>Use code: MARCH30 to get 30% off on full price and sale products. Some exclusions apply.</span>
               </div>
             </div>
-
-            <div className="colors">
-              <h5 className="available-colors">Available Colors</h5>
-              <span className="color-types">{this.props.shoe.available_colors.join(' / ')}</span>
-            </div>
-
-            <div className="color-wrapper">
-              <div className="selection-box">
-                <div className="tick-icon">
-                  <svg class="check-icon" data-di-res-id="b2f2def1-1a5917fc" data-di-rand="1585212244738">
-                  <svg id="checkmark" viewBox="0 0 19 19"><path fill="none" stroke="currentColor" stroke-linecap="square" stroke-miterlimit="10" d="M2.5 10.5l4 4 10-10"></path></svg>
-                  </svg>
-                </div>
-                <div className="circle-image">
-                </div>
-                {/* <use xlink:href="#checkmark"></use> */}
-              </div>
-
-            </div>
-
+            <Colors shoe={this.props.shoe} images={this.props.images} changeImage={this.props.changeImage}/>
 
 
 

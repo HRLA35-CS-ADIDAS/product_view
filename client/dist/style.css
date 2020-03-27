@@ -549,7 +549,7 @@ body {
 }
 
 .circle-image {
-    background: url("https://assets.adidas.com/images/w_100,h_100,f_auto,q_auto:sensitive,fl_lossy/9e15205d36ca4f6fb935ab3800c22e48_9366/NMD_R1_Shoes_Black_FV7969_01_standard.jpg");
+    /* background: url("https://adidas-testbucket.s3-us-west-1.amazonaws.com/NMD_R1_Shoes_Black_FV7969_01_standard.jpg"); */
     border-radius: 50%;
     padding-bottom: 100%;
     background-size: cover;
@@ -754,22 +754,22 @@ body {
   ========================================
 */
 
-    .popup-image {
-        margin-left: 100px;
-        z-index: 20;
-    }
+.popup-image {
+    margin-left: 100px;
+    z-index: 20;
+}
 
-    .modalImage {
-        /* background: red; */
-        position: relative;
-        padding-bottom: 60px;
-        padding-left: 0px;
-        padding-right: 0px;
-        padding-top: 50px;
-        /* top: 20px;
-        left: 100px;
-        right: 0px; */
-    }
+.modalImage {
+    /* background: red; */
+    position: relative;
+    padding-bottom: 60px;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-top: 50px;
+    /* top: 20px;
+    left: 100px;
+    right: 0px; */
+}
 
 /* .modalImage {
     position: relative;

@@ -5,12 +5,11 @@ class Price extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            oldPrice: this.props.oldPrice
         }
     }
 
     render() {
-        if (this.state.oldPrice === null) {
+        if (this.props.oldPrice === null) {
             return (
                 <div className="price-div">
                     <span className="only-price">${this.props.newPrice}</span>

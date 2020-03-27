@@ -11,6 +11,7 @@ class ProductDisplay extends React.Component {
         this.state = {
             showModal: false,
             image: this.props.images[counter]
+
         }
         this.handlePrev = this.handlePrev.bind(this);
         this.handleNext = this.handlePrev.bind(this);
@@ -18,6 +19,12 @@ class ProductDisplay extends React.Component {
         this.openModal = this.openModal.bind(this);
         this.closeModal = this.closeModal.bind(this);
     }
+
+    componentWillReceiveProps(nextProps) {
+        if (nextProps.images[0] !== this.state.image) {
+          this.setState({ image: nextProps.images[0] });
+        }
+      }
 
     handlePrev() {
         if (counter === 0) {
@@ -72,6 +79,7 @@ class ProductDisplay extends React.Component {
                     </button>
                     <div className="product-image">
                         <img className="large-product" src={this.state.image} onClick={this.openModal}/>
+                        {console.log(this.state.image)}
                     </div>
                     <button onClick={this.handleNext} className="mainNext">
                         <div className="mainArrowDiv_next">
