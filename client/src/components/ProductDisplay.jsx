@@ -22,9 +22,9 @@ class ProductDisplay extends React.Component {
 
     componentWillReceiveProps(nextProps) {
         if (nextProps.images[0] !== this.state.image) {
-          this.setState({ image: nextProps.images[0] });
+            this.setState({ image: nextProps.images[0] });
         }
-      }
+    }
 
     handlePrev() {
         if (counter === 0) {
@@ -60,40 +60,64 @@ class ProductDisplay extends React.Component {
 
     render() {
         return (
-            <div>
-            <div className="shoe-element-container">
-                <div className="side-image-container">
-                    {this.props.images.map((sideImg) => {
-                        return (
-                            <div className="side-image-box">
-                                <img className="side-image" src={sideImg} onClick={() => { this.openThumbnail(this.props.images.indexOf(sideImg)) }} />
-                            </div>)
-                    })}
-                </div>
-                <div className="mainImageBox">
-                    <button onClick={this.handlePrev} className="mainPrev">
-                        <div className="mainArrowDiv_prev">
-                            <svg viewBox="0 0 50 50"> <path d="M17.59 7l5 5-5 5M0 12h22" fill="none" stroke="currentColor" strokeMiterlimit="10" strokeWidth="2"></path>
+            <div className="img-wrapper">
+                <div className="shoe-element-container">
+
+                    <div className="mainImageBox">
+
+                        <div className="product-image">
+                            <img className="large-product" src={this.state.image} onClick={this.openModal} />
+                        </div>
+
+                        <div className="left-arrow" onClick={this.handlePrev}>
+                            <svg className="left-drop-shadow" data-di-rand="1585287190386">
+                                
+                                <svg className="arrow-right-long" viewBox="0 0 24 24">
+                                    <path d="M17.59 7l5 5-5 5M0 12h22" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="2"></path>
+                                </svg>
+
+                            </svg>
+
+                            <svg className="gl-icon-arrow___1v3Xz" data-di-rand="1585287190386">
+                                <svg className="arrow-right-long" viewBox="0 0 24 24">
+                                    <path d="M17.59 7l5 5-5 5M0 12h22" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="2"></path>
+                                </svg>
+
                             </svg>
                         </div>
-                    </button>
-                    <div className="product-image">
-                        <img className="large-product" src={this.state.image} onClick={this.openModal}/>
-                        {console.log(this.state.image)}
+
+                        <div className="right-arrow" onClick={this.handleNext}>
+                            <svg className="right-drop-shadow" data-di-rand="1585287190386">
+                                <svg className="arrow-right-long" viewBox="0 0 24 24">
+                                    <path d="M17.59 7l5 5-5 5M0 12h22" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="2"></path></svg>
+                            </svg>
+                            <svg className="gl-icon-arrow___1v3Xz" data-di-rand="1585287190386">
+                                <svg className="arrow-right-long" viewBox="0 0 24 24">
+                                    <path d="M17.59 7l5 5-5 5M0 12h22" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="2"></path>
+                                </svg>
+                            </svg>
+
+                        </div>
+
                     </div>
-                    <button onClick={this.handleNext} className="mainNext">
-                        <div className="mainArrowDiv_next">
-                            <svg viewBox="0 0 50 50"> <path d="M17.59 7l5 5-5 5M0 12h22" fill="none" stroke="currentColor" strokeMiterlimit="10" strokeWidth="2"></path>
-                            </svg>
-                        </div>
-                    </button>
-                </div>
-            </div>
-                <ReactModal isOpen={this.state.showModal} className="modalImage" overlayClassName="Overlay" onRequestClose={this.closeModal}>
-                    <button onClick={this.closeModal} id="mainModalButton"><span id="closeButton">✕</span></button>
-                    <ImageCarousel images={this.props.images} image={this.state.image} handlePrev={this.handlePrev} handleNext={this.handleNext}/>
-                </ReactModal>
-                </div>
+
+
+                    <div className="side-image-container">
+                        {this.props.images.map((sideImg) => {
+                            return (
+                                <div className="side-image-box">
+                                    <img className="side-image" src={sideImg} onClick={() => { this.openThumbnail(this.props.images.indexOf(sideImg)) }} />
+                                </div>)
+                        })}
+                    </div>
+
+                    <ReactModal isOpen={this.state.showModal} className="modalImage" overlayClassName="Overlay" onRequestClose={this.closeModal}>
+                        <button onClick={this.closeModal} id="mainModalButton"><span id="closeButton">✕</span></button>
+                        <ImageCarousel images={this.props.images} image={this.state.image} handlePrev={this.handlePrev} handleNext={this.handleNext} />
+                    </ReactModal>
+                </div >
+            </div >
+
         )
     }
 }
