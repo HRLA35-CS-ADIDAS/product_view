@@ -65,9 +65,9 @@ class ProductDisplay extends React.Component {
 
                     <div className="mainImageBox">
 
-                        <div className="product-image">
+                        {/* <div className="product-image"> */}
                             <img className="large-product" src={this.state.image} onClick={this.openModal} />
-                        </div>
+                        {/* </div> */}
 
                         <div className="left-arrow" onClick={this.handlePrev}>
                             <svg className="left-drop-shadow" data-di-rand="1585287190386">
@@ -100,8 +100,7 @@ class ProductDisplay extends React.Component {
                         </div>
 
                     </div>
-
-
+                    <div className="side-viewer">
                     <div className="side-image-container">
                         {this.props.images.map((sideImg) => {
                             return (
@@ -109,6 +108,7 @@ class ProductDisplay extends React.Component {
                                     <img className="side-image" src={sideImg} onClick={() => { this.openThumbnail(this.props.images.indexOf(sideImg)) }} />
                                 </div>)
                         })}
+                    </div>
                     </div>
 
                     <ReactModal isOpen={this.state.showModal} className="modalImage" overlayClassName="Overlay" onRequestClose={this.closeModal}>
