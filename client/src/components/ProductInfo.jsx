@@ -16,7 +16,8 @@ class ProductInfo extends React.Component {
       showQuan: false,
       selectedSize: null,
       quantity: 1,
-      totalQuantity: 1
+      totalQuantity: 1,
+      heart: false
     }
     this.handleSize = this.handleSize.bind(this);
     this.handleQuan = this.handleQuan.bind(this);
@@ -24,6 +25,7 @@ class ProductInfo extends React.Component {
     this.selectSize = this.selectSize.bind(this);
     this.selectQuan = this.selectQuan.bind(this);
     this.openSize = this.openSize.bind(this);
+    this.toggleHeart = this.toggleHeart.bind(this);
   }
 
   handleSize(e) {
@@ -86,6 +88,12 @@ class ProductInfo extends React.Component {
       quantity: num,
       showQuan: false,
       totalQuantity: this.state.totalQuantity + num
+    })
+  }
+
+  toggleHeart(){
+    this.setState({
+      heart: !this.state.heart
     })
   }
 
@@ -322,11 +330,13 @@ class ProductInfo extends React.Component {
               <div className="bag-container">
 
                 <BagPopup openSize={this.openSize} selectedSize={this.state.selectedSize} totalQuantity={this.state.totalQuantity} shoe={this.props.shoe} images={this.props.images} handleBag={this.handleBag} size={this.state.selectedSize} quantity={this.state.quantity} />
-                <div className="heart-div">
+                <div onClick={this.toggleHeart} className="heart-div">
                   <div className="toggle-heart">
-                    <svg className="gl-icon" data-auto-id="wishlist-icon" data-di-res-id="6361accf-4a701908" data-di-rand="1585359780189">
+                    {(this.state.heart) ? (<svg className="gl-icon-active" data-auto-id="wishlist-icon" data-di-rand="1585474990403" data-di-res-id="b103962b-ab6a442f">
+                    <svg id="wishlist-active" viewBox="0 0 20 24"><path fill="currentColor" stroke="currentColor" stroke-miterlimit="10" stroke-width="2" d="M7.38 6H4.42L2 10l8 8 8-8-2.41-4h-2.98L10 9 7.38 6z"></path></svg>
+                    </svg>) : (<svg className="gl-icon" data-auto-id="wishlist-icon" data-di-res-id="6361accf-4a701908" data-di-rand="1585359780189">
                       <svg id="wishlist-inactive" viewBox="0 0 20 24"><path fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="2" d="M7.38 6H4.42L2 10l8 8 8-8-2.41-4h-2.98L10 9 7.38 6z"></path></svg>
-                    </svg>
+                    </svg>)}
                   </div>
                 </div>
 

@@ -2636,7 +2636,13 @@ body {
 }
 
 .heart-div:hover{
+    background-color: #fff;
+    border-color: #000;
     color: #767677;
+}
+
+.heart-div:active {
+    transform: scale(.97);
 }
 
 .toggle-heart {
@@ -2676,6 +2682,14 @@ body {
     line-height: 47px;
     text-align: left;
     white-space: nowrap;
+}
+
+.gl-icon-active {
+    display: inline-block;
+    height: 24px;
+    vertical-align: text-top;
+    width: 24px;
+    box-sizing: border-box;
 }
 
 #wishlist-inactive {
