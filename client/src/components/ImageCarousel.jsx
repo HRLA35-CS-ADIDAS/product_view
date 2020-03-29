@@ -21,28 +21,23 @@ class ImageCarousel extends React.Component {
         return (
             <div className="modal-root">
                 
-                <Magnify image={this.props.image} onClick={this.handleZoom}/>
                 <div className="full-modal">
                     {/* button */}
-                    <div className="dialog" aria-model="true">
-                        <div className="main-modal"></div>
-                    </div>
-                    <button className="close-modal" onClick={this.props.closeButton}>
-                    <svg className="close-icon" data-di-res-id="afd85625-1c771244" data-di-rand="1585384319810">
-                    <svg id="close" viewBox="0 0 18 24"><path d="M17 4l-8 8 8 8M1 4l8 8-8 8" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="2"></path></svg>
-                    </svg>
-                    </button>
+                    {/* <div className="dialog" aria-model="true">
+                        <div className="main-modal"></div> */}
+                    {/* </div> */}
                     <div className="zoom-modal-content">
                         <div className="main-content">
                             <div className="carousel-wrapper">
                                 <div className="carousel-overflow">
                                     <div className="carousel-content">
-                                        <div className="carousel-row">
+                <Magnify image={this.props.image} onClick={this.handleZoom}/>
+                                        {/* <div className="carousel-row">
                                             <div className="carousel-slider">
                                                 <img className="carousel-image" src={this.props.image}/>
                                             </div>
 
-                                        </div>
+                                        </div> */}
 
                                     </div>
                                 </div>

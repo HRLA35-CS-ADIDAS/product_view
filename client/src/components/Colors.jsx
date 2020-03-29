@@ -61,16 +61,7 @@ class Colors extends React.Component {
 
                     }
 
-
-
                     )}
-
-
-
-
-
-
-
 
                     {/* <div className="tick-icon">
                         <svg class="check-icon" data-di-res-id="b2f2def1-1a5917fc" data-di-rand="1585212244738">

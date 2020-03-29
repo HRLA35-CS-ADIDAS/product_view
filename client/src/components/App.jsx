@@ -2,7 +2,6 @@ import React from 'react';
 import axios from 'axios';
 import ProductDisplay from './ProductDisplay.jsx';
 import ProductInfo from './ProductInfo.jsx'
-import Axios from 'axios';
 
 class App extends React.Component {
     constructor(props) {
@@ -89,7 +88,7 @@ class App extends React.Component {
                         <div className="background" />
                         <div className="inner-product-container">
                             {/* {console.log('hhh', this.state.currentShoe.carousel_images)} */}
-                            <ProductDisplay images={this.state.currentShoe.carousel_images} />
+                            <ProductDisplay shoe={this.state.currentShoe} images={this.state.currentShoe.carousel_images} />
                             <ProductInfo shoe={this.state.currentShoe} images={this.state.currentShoe.carousel_images} changeImage={this.changeShoe} />
 
                         </div>

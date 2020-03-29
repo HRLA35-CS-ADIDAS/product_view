@@ -13,7 +13,7 @@ class Magnify extends React.Component {
 
         return (
             <div className="fluid">
-            <div className="fluid_container">
+            {/* <div className="fluid_container"> */}
                 <ReactMagnify {...{
                     smallImage: {
                         src: this.props.image,
@@ -26,9 +26,10 @@ class Magnify extends React.Component {
                     },
                     imageStyle: { height: '600px' },
                     enlargedImagePosition: 'over',
-                    lensStyle: {backgroundColor: 'rgba(0,0,0,.6)'}
+                    lensStyle: {backgroundColor: 'rgba(0,0,0,.6)'},
+                    cursorStyle: {cursor: 'cursor: url(https://www.adidas.com/glass/react/1a20ddb/assets/img/icon-adidas-cursor-zoomed.png), 100%;'}
                 }}/>
-            </div>
+            {/* </div> */}
         </div>
         )
     }

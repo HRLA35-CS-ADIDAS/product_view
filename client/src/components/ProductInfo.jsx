@@ -1,7 +1,11 @@
 import React from 'react';
-import axios from 'axios';
 import Price from './Price.jsx';
 import Colors from './Colors.jsx';
+import LearnMore from './LearnMore.jsx';
+import FreeShipping from './FreeShipping.jsx';
+import PayPal from './PayPal.jsx';
+import SizeGuide from './SizeGuide.jsx';
+import BagPopup from './BagPopup.jsx';
 
 class ProductInfo extends React.Component {
   constructor(props) {
@@ -11,12 +15,15 @@ class ProductInfo extends React.Component {
       showSize: false,
       showQuan: false,
       selectedSize: null,
-      quantity: 1
+      quantity: 1,
+      totalQuantity: 1
     }
     this.handleSize = this.handleSize.bind(this);
     this.handleQuan = this.handleQuan.bind(this);
+    this.handleBag = this.handleBag.bind(this);
     this.selectSize = this.selectSize.bind(this);
     this.selectQuan = this.selectQuan.bind(this);
+    this.openSize = this.openSize.bind(this);
   }
 
   handleSize(e) {
@@ -34,6 +41,12 @@ class ProductInfo extends React.Component {
     }
   }
 
+  openSize() {
+    this.setState({
+      showSize: true
+    })
+  }
+
   handleQuan(e) {
     e.preventDefault()
     this.setState({
@@ -42,15 +55,49 @@ class ProductInfo extends React.Component {
     })
   }
 
-  selectSize(e, size) {
-    e.stopImmediatePropagation()
-    // console.log(size)
-
+  handleBag(e) {
+    e.preventDefault()
+    if (this.state.selectedSize === null) {
+      this.setState({
+        showSize: true,
+        // totalQuantity: this.state.totalQuantity + this.state.quantity
+      })
+    } else {
+      this.setState({
+        totalQuantity: this.state.totalQuantity + this.state.quantity
+      })
     }
+  }
+  //   } else {
+  //     this.setState({
+  //       showBag: !this.state.showBag
+  //     })
+  //   }
+  // }
+
+  selectSize(size) {
+    this.setState({
+      selectedSize: size
+    })
+  }
 
   selectQuan(num) {
-    console.log(num)
+    this.setState({
+      quantity: num,
+      showQuan: false,
+      totalQuantity: this.state.totalQuantity + num
+    })
   }
+
+  // openModal(e) {
+  //   e.preventDefault()
+  //   this.setState({ showModal: true });
+  // }
+
+  // closeModal(e) {
+  //   e.preventDefault()
+  //   this.setState({ showModal: false });
+  // }
 
   render() {
 
@@ -62,7 +109,6 @@ class ProductInfo extends React.Component {
       <div className="product-description">
         <div className="product-description-box">
           <div className="product-information">
-
             <div className="name-info">
 
               <div className="top-section">
@@ -102,9 +148,7 @@ class ProductInfo extends React.Component {
                     <span className="affirm"> with Affirm.</span>
 
                   </div>
-                  <div className="learn-box">
-                    <button className="learn-more">Learn More</button>
-                  </div>
+                  <LearnMore />
                 </div>
 
                 <div className="promotion">
@@ -116,22 +160,12 @@ class ProductInfo extends React.Component {
               </div>
             </div>
 
-
-
-
             <div className="color-chooser">
               <Colors shoe={this.props.shoe} images={this.props.images} changeImage={this.props.changeImage} />
             </div>
 
             <form className="bag-form">
-              <div className="size-guide-container">
-                <div className="size-guide">
-                  <svg className="gl-icon-gl-icon--size-communication" data-di-res-id="3d102a33-2fb4d1f3" data-di-rand="1585301057992">
-                    <svg className="size-guider" viewBox="0 0 19 19"><g fill="none" stroke="currentColor" stroke-miterlimit="10"><path d="M.5 6.5h18v6H.5z"></path><path stroke-linecap="square" d="M3.5 12.5v-3m3 3v-2m3 2v-3m6 3v-3m-3 3v-2"></path></g></svg>
-
-                  </svg>
-                  Size Guide</div>
-              </div>
+              <SizeGuide />
 
 
               <div className="size-container">
@@ -140,7 +174,8 @@ class ProductInfo extends React.Component {
                     <div className="size-container4">
                       <button onClick={this.handleSize} className="select-size">
                         <span className="select">
-                          <span className="select-inner">SELECT SIZE</span>
+                          {(this.state.selectedSize === null) ? (<span className="select-inner">SELECT SIZE</span>) : (<span className="select-inner">{this.state.selectedSize}</span>)}
+
                         </span>
 
                         {this.state.showSize ? (<svg className="open-dropdown" data-di-res-id="3d102a33-51e27117" data-di-rand="1585301057992">
@@ -159,9 +194,9 @@ class ProductInfo extends React.Component {
                               {this.props.shoe.size.map((size) => {
                                 return (
                                   <li className="size-item">
-                                    <button onClick={() => {this.selectSize(size)}} className="button-item">
-                                      {size}
-                                    </button>
+                                    <div onClick={() => this.selectSize(size)} className="button-item">
+                                      <b>{size}</b>
+                                    </div>
                                   </li>
                                 )
                               })}
@@ -192,37 +227,85 @@ class ProductInfo extends React.Component {
                       </button>
 
                       {this.state.showQuan ? (<div className="quantity-dropdown-menu">
+
                         <ul>
-                          <li className="quantity-dropdown-item">
-                            <button className="quantity-dropdown-button" onClick={() => {this.selectQuan(1)}}>1</button>
-                          </li>
-                          <li className="quantity-dropdown-item">
-                            <button className="quantity-dropdown-button">2</button>
-                          </li>
-                          <li className="quantity-dropdown-item">
-                            <button className="quantity-dropdown-button">3</button>
-                          </li>
-                          <li className="quantity-dropdown-item">
-                            <button className="quantity-dropdown-button">4</button>
-                          </li>
-                          <li className="quantity-dropdown-item">
-                            <button className="quantity-dropdown-button">5</button>
-                          </li>
-                          <li className="quantity-dropdown-item">
-                            <button className="quantity-dropdown-button">6</button>
-                          </li>
-                          <li className="quantity-dropdown-item">
-                            <button className="quantity-dropdown-button">7</button>
-                          </li>
-                          <li className="quantity-dropdown-item">
-                            <button className="quantity-dropdown-button">8</button>
-                          </li>
-                          <li className="quantity-dropdown-item">
-                            <button className="quantity-dropdown-button">9</button>
-                          </li>
-                          <li className="quantity-dropdown-item">
-                            <button className="quantity-dropdown-button">10</button>
-                          </li>
+
+                          {(this.state.quantity === 1) ? (
+                            <li className="quantity-dropdown-item">
+                              <div className="quantity-dropdown-button-clicked" onClick={() => { this.selectQuan(1) }}>1</div>
+                            </li>) : (
+                              <li className="quantity-dropdown-item">
+                                <div className="quantity-dropdown-button" onClick={() => { this.selectQuan(1) }}>1</div>
+                              </li>)}
+
+                          {(this.state.quantity === 2) ? (
+                            <li className="quantity-dropdown-item">
+                              <div className="quantity-dropdown-button-clicked" onClick={() => { this.selectQuan(2) }}>2</div>
+                            </li>) : (
+                              <li className="quantity-dropdown-item">
+                                <div className="quantity-dropdown-button" onClick={() => { this.selectQuan(2) }}>2</div>
+                              </li>)}
+
+
+                          {(this.state.quantity === 3) ? (
+                            <li className="quantity-dropdown-item">
+                              <div className="quantity-dropdown-button-clicked" onClick={() => { this.selectQuan(3) }}>3</div>
+                            </li>) : (
+                              <li className="quantity-dropdown-item">
+                                <div className="quantity-dropdown-button" onClick={() => { this.selectQuan(3) }}>3</div>
+                              </li>)}
+
+                          {(this.state.quantity === 4) ? (
+                            <li className="quantity-dropdown-item">
+                              <div className="quantity-dropdown-button-clicked" onClick={() => { this.selectQuan(4) }}>4</div>
+                            </li>) : (
+                              <li className="quantity-dropdown-item">
+                                <div className="quantity-dropdown-button" onClick={() => { this.selectQuan(4) }}>4</div>
+                              </li>)}
+
+                          {(this.state.quantity === 5) ? (
+                            <li className="quantity-dropdown-item">
+                              <div className="quantity-dropdown-button-clicked" onClick={() => { this.selectQuan(5) }}>5</div>
+                            </li>) : (
+                              <li className="quantity-dropdown-item">
+                                <div className="quantity-dropdown-button" onClick={() => { this.selectQuan(5) }}>5</div>
+                              </li>)}
+
+                          {(this.state.quantity === 6) ? (
+                            <li className="quantity-dropdown-item">
+                              <div className="quantity-dropdown-button-clicked" onClick={() => { this.selectQuan(6) }}>6</div>
+                            </li>) : (
+                              <li className="quantity-dropdown-item">
+                                <div className="quantity-dropdown-button" onClick={() => { this.selectQuan(6) }}>6</div>
+                              </li>)}
+                          {(this.state.quantity === 7) ? (
+                            <li className="quantity-dropdown-item">
+                              <div className="quantity-dropdown-button-clicked" onClick={() => { this.selectQuan(7) }}>7</div>
+                            </li>) : (
+                              <li className="quantity-dropdown-item">
+                                <div className="quantity-dropdown-button" onClick={() => { this.selectQuan(7) }}>7</div>
+                              </li>)}
+                          {(this.state.quantity === 8) ? (
+                            <li className="quantity-dropdown-item">
+                              <div className="quantity-dropdown-button-clicked" onClick={() => { this.selectQuan(8) }}>8</div>
+                            </li>) : (
+                              <li className="quantity-dropdown-item">
+                                <div className="quantity-dropdown-button" onClick={() => { this.selectQuan(8) }}>8</div>
+                              </li>)}
+                          {(this.state.quantity === 9) ? (
+                            <li className="quantity-dropdown-item">
+                              <div className="quantity-dropdown-button-clicked" onClick={() => { this.selectQuan(9) }}>9</div>
+                            </li>) : (
+                              <li className="quantity-dropdown-item">
+                                <div className="quantity-dropdown-button" onClick={() => { this.selectQuan(9) }}>9</div>
+                              </li>)}
+                          {(this.state.quantity === 10) ? (
+                            <li className="quantity-dropdown-item">
+                              <div className="quantity-dropdown-button-clicked" onClick={() => { this.selectQuan(10) }}>10</div>
+                            </li>) : (
+                              <li className="quantity-dropdown-item">
+                                <div className="quantity-dropdown-button" onClick={() => { this.selectQuan(10) }}>10</div>
+                              </li>)}
                         </ul>
 
 
@@ -237,14 +320,8 @@ class ProductInfo extends React.Component {
 
               </div>
               <div className="bag-container">
-                <button className="bag-button">
-                  <span className="before-button"></span>
-                  <span className="bag-text">ADD TO BAG</span>
-                  <svg className="gl-icon-gl-cta__icon" data-di-res-id="6361accf-c33aeebb" data-di-rand="1585359780189">
-                    <svg id="arrow-right-long" viewBox="0 0 24 24"><path d="M17.59 7l5 5-5 5M0 12h22" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="2"></path></svg>
-                  </svg>
-                  <span className="after-button"></span>
-                </button>
+
+                <BagPopup openSize={this.openSize} selectedSize={this.state.selectedSize} totalQuantity={this.state.totalQuantity} shoe={this.props.shoe} images={this.props.images} handleBag={this.handleBag} size={this.state.selectedSize} quantity={this.state.quantity} />
                 <div className="heart-div">
                   <div className="toggle-heart">
                     <svg className="gl-icon" data-auto-id="wishlist-icon" data-di-res-id="6361accf-4a701908" data-di-rand="1585359780189">
@@ -255,40 +332,8 @@ class ProductInfo extends React.Component {
 
               </div>
               <div className="bottom-links">
-
-                <div className="shipping">
-                  <div className="promo-callout">
-                    <div className="icon-wrapper">
-                      <svg className="car1" data-di-rand="1585359780190">
-                        <svg id="usp-delivery" viewBox="0 0 19 19"><g fill="none" stroke="currentColor" stroke-miterlimit="10"><path d="M13.42 13.5H9.5"></path><path stroke-linecap="square" d="M4.5 5.5h10l4 3v5h-2M6.5 13.5h-2m0-6h-4"></path><circle cx="8" cy="13" r="1.5"></circle><circle cx="15" cy="13" r="1.5"></circle><path stroke-linecap="square" d="M1.5 9.5h3m-2 2h2"></path></g></svg>
-                      </svg>
-                    </div>
-                    <div className="callout-content">
-                      <div className="promo-link">
-                        <a className="free-shipping">
-                          FREE SHIPPING OVER $49 + FREE RETURNS & EXCHANGES
-
-                      </a>
-                      </div>
-
-                    </div>
-                  </div>
-                </div>
-                <div className="paypal">
-                  <div className="promo-callout2">
-
-
-                    <div className="icon-wrapper2">
-                      <svg className="usp-checkmark" data-di-rand="1585359780190">
-                        <svg id="usp" viewBox="0 0 17 19"><path fill="none" stroke="currentColor" stroke-linecap="square" stroke-miterlimit="10" d="M1.5 10.5l4 4 10-10"></path></svg>
-                      </svg></div>
-                    <div className="callout-content2">
-                      <div className="promo-link2">
-                        <a className="paypal-link">Buy now, pay over time with PayPal CREDIT</a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                <FreeShipping />
+                <PayPal />
 
 
 
