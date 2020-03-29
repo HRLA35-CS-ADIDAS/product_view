@@ -23,7 +23,7 @@ class App extends React.Component {
                 if (this.state.currentShoe === null) {
                     this.setState({
                         products: results.data,
-                        currentShoe: results.data[0]
+                        currentShoe: results.data[(Math.floor(results.data.length * Math.random()))]
                     })
                 } else {
                     this.setState({
