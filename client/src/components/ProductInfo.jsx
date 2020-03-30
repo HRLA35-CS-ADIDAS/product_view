@@ -82,7 +82,8 @@ class ProductInfo extends React.Component {
 
   selectSize(size) {
     this.setState({
-      selectedSize: size
+      selectedSize: size,
+      pleaseSelect: false
     })
   }
 
@@ -99,16 +100,6 @@ class ProductInfo extends React.Component {
       heart: !this.state.heart
     })
   }
-
-  // openModal(e) {
-  //   e.preventDefault()
-  //   this.setState({ showModal: true });
-  // }
-
-  // closeModal(e) {
-  //   e.preventDefault()
-  //   this.setState({ showModal: false });
-  // }
 
   render() {
 
@@ -212,9 +203,9 @@ class ProductInfo extends React.Component {
                                 )
                               })}
 
-                              {this.state.pleaseSelect ? (<div className="please">Please select your size</div>) : (null)}
 
                             </ul>
+                              {this.state.pleaseSelect ? (<div className="please">Please select your size</div>) : (null)}
 
                           </div>
 

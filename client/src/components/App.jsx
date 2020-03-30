@@ -83,7 +83,7 @@ class App extends React.Component {
                         <div className="background" />
                         <div className="inner-product-container">
                             {/* {console.log('hhh', this.state.currentShoe.carousel_images)} */}
-                            <ProductDisplay shoe={this.state.currentShoe} images={this.state.currentShoe.carousel_images} />
+                            <ProductDisplay shoe={this.state.currentShoe} images={this.state.currentShoe.carousel_images} matching_items={this.state.currentShoe.matching_items}/>
                             <ProductInfo shoe={this.state.currentShoe} images={this.state.currentShoe.carousel_images} changeImage={this.changeShoe} />
 
                         </div>

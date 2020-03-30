@@ -1,7 +1,7 @@
 import React from 'react';
-import axios from 'axios';
 import ReactModal from 'react-modal';
 import ImageCarousel from './ImageCarousel.jsx';
+import CompleteLook from './CompleteLook.jsx';
 
 var counter = 0;
 
@@ -118,41 +118,14 @@ class ProductDisplay extends React.Component {
                             <svg id="close" viewBox="0 0 18 24"><path d="M17 4l-8 8 8 8M1 4l8 8-8 8" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="2"></path></svg>
                         </svg>
                     </button>
-{/* 
-                    <div className="left-arrow-c" onClick={this.handlePrev}>
-                        <svg className="left-drop-shadow-c" data-di-rand="1585287190386">
-
-                            <svg className="arrow-right-long-c" viewBox="0 0 24 24">
-                                <path d="M17.59 7l5 5-5 5M0 12h22" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="2"></path>
-                            </svg>
-
-                        </svg>
-
-                        <svg className="gl-icon-arrow___1v3Xz-c" data-di-rand="1585287190386">
-                            <svg className="arrow-right-long-c" viewBox="0 0 24 24">
-                                <path d="M17.59 7l5 5-5 5M0 12h22" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="2"></path>
-                            </svg>
-
-                        </svg>
-                    </div>
-
-                    <div className="right-arrow-c" onClick={this.handleNext}>
-                        <svg className="right-drop-shadow-c" data-di-rand="1585287190386">
-                            <svg className="arrow-right-long-c" viewBox="0 0 24 24">
-                                <path d="M17.59 7l5 5-5 5M0 12h22" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="2"></path></svg>
-                        </svg>
-                        <svg className="gl-icon-arrow___1v3Xz-c" data-di-rand="1585287190386">
-                            <svg className="arrow-right-long-c" viewBox="0 0 24 24">
-                                <path d="M17.59 7l5 5-5 5M0 12h22" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="2"></path>
-                            </svg>
-                        </svg>
-
-                    </div> */}
-
-
-
                     <ImageCarousel closeButton={this.closeModal} images={this.props.images} image={this.state.image} handlePrev={this.handlePrev} handleNext={this.handleNext} />
                 </ReactModal>
+
+                {(this.props.matching_items === null) ? (null) : (
+                    // console.log(this.props.matching_items)
+                    <CompleteLook matching_items={this.props.matching_items}/>
+                )}
+
 
             </div >
 
@@ -161,7 +134,3 @@ class ProductDisplay extends React.Component {
 }
 
 export default ProductDisplay;
-
-{/* <ReactModal className="carousel-modal" isOpen={this.state.showModal} style={customStyles} overlayClassName="Overlay">
-                    <p>hello</p>
-                </ReactModal> */}

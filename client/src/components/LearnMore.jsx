@@ -6,7 +6,7 @@ const customStyles = {
         top: '25%',
         left: '25%',
         right: '25%',
-        bottom: '40%',
+        bottom: '37%',
         padding: '30px',
         overflow: 'hidden'
     }

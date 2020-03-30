@@ -15,7 +15,8 @@ var shoeSchema = mongoose.Schema({
   size: Array,
   available_colors: Array,
   carousel_images: Array,
-  related_shoes: Array
+  related_shoes: Array,
+  matching_items: Array
 })
 
 var Shoe = mongoose.model('Shoe', shoeSchema)

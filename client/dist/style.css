@@ -1105,6 +1105,171 @@ Installments
 
 /*
   ========================================
+  Complete Look
+  ========================================
+*/
+
+.complete-div {
+    flex-direction: row;
+    margin-left: 40px;
+    padding: 1em 0 0;
+    border-bottom: none;
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 20px;
+    position: relative;
+    width: 1000px;
+    box-sizing: border-box;
+}
+
+.complete-heading {
+    min-height: 90px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 0;
+    flex: 1;
+    margin-right: 35px;
+    align-self: flex-start;
+    font-family: AdineuePRO,Helvetica,Arial,sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 28px;
+    text-transform: uppercase;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    margin-block-start: 1.33em;
+    margin-block-end: 1.33em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+.complete-items {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+.complete-items-list {
+    justify-content: left;
+    display: flex;
+    box-sizing: border-box;
+}
+
+.complete-container {
+    max-width: 90px;
+    cursor: pointer;
+    position: relative;
+    margin: 25px 15px 0 0;
+    box-sizing: border-box;
+    display: block;
+}
+
+.complete-product {
+    position: relative;
+    box-sizing: border-box;
+    display: block;
+    cursor: pointer;
+}
+
+.complete-image {
+    width: 90px;
+    height: 90px;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+.complete-price-container {
+    margin-top: 15px;
+    cursor: pointer;
+    box-sizing: border-box;
+    display: block;
+}
+
+.complete-price {
+    display: flex;
+    flex-wrap: wrap;
+    font-family: AdihausDIN,Helvetica,Arial,sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    box-sizing: border-box;
+}
+
+.completeDrop {
+    box-sizing: border-box;
+    display: block;
+}
+
+.completeFlex {
+    flex-direction: row;
+    padding-top: 20px;
+    border-top: 1px solid #767677;
+    display: flex;
+    justify-content: flex-start;
+    box-sizing: border-box;
+}
+
+.image-container-2 {
+    width: 214px;
+    margin: 0;
+    padding-top: 0;
+    border-top: none;
+    position: relative;
+    overflow: hidden;
+    height: auto;
+    box-sizing: border-box;
+    display: block;
+}
+
+.complete-img-2 {
+    width: 194px;
+    height: 194px;
+    position: relative;
+    box-sizing: border-box;
+    display: block;
+}
+
+.fit-img {
+    max-height: 100%;
+    max-width: 100%;
+}
+
+.purchase-container {
+    width: 260px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+
+.complete-item-info {
+    margin: 0 0 15px;
+    white-space: normal;
+    height: auto;
+    box-sizing: border-box;
+    display: block;
+}
+
+.complete-h5 {
+    margin: 0;
+    font-size: 20px;
+    line-height: 18px;
+    font-family: AdineuePRO,Helvetica,Arial,sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 0;
+    font-size: 0.83em;
+    margin-block-start: 1.67em;
+    margin-block-end: 1.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+/*
+  ========================================
   Product Description
   ========================================
 */
@@ -1613,6 +1778,15 @@ Installments
     box-sizing: border-box;
 }
 
+.size-container-complete {
+    position: static;
+    cursor: pointer;
+    display: block;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    width: 300px;
+}
+
 .select-size {
     text-transform: uppercase;
     font-size: 14px;
@@ -1816,6 +1990,27 @@ Installments
     box-sizing: border-box;
     display: block;
     cursor: pointer; */
+}
+
+.complete-dropdown-options {
+    z-index: 36;
+    border-top-color: #000;
+    max-height: unset;
+    border-color: #ebedee #000 #000;
+    opacity: 1;
+    transition: opacity .1s cubic-bezier(.3,0,.45,1),visibility .1s cubic-bezier(.3,0,.45,1) 0s;
+    visibility: visible;
+    padding: 20px 10px;
+    background-color: #fff;
+    border: 1px solid #767677;
+    left: 0;
+    overflow: auto;
+    right: 0;
+    transform: translateY(-1px);
+    width: 100%;
+    box-sizing: border-box;
+    display: block;
+    cursor: pointer;
 }
 
 .square-list {
