@@ -2,7 +2,7 @@
    v2.0 | 20110126
    License: none (public domain)
 */
-
+/* 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -22,9 +22,9 @@ time, mark, audio, video {
 	font-size: 100%;
 	font: inherit;
 	vertical-align: baseline;
-}
+} */
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
+/* article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
@@ -45,13 +45,17 @@ q:before, q:after {
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
-}
+} */
 
 /*
   ========================================
   Body
   ========================================
 */
+
+#app {
+    margin-top: 80px;
+}
 
 body {
     font-family: AdihausDIN,Helvetica,Arial,sans-serif;
@@ -352,6 +356,7 @@ body {
 
 .Overlay {
     position: fixed;
+    z-index: 99;
     top: 0px;
     left: 0px;
     right: 0px;

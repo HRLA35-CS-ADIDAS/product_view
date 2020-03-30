@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  server:
+    build: .
+    depends_on:
+      - 'mongo'
+    ports:
+      - '3000:3000'
+
+  mongo:
+    image: mongo:latest
+    ports:
+      - "27017:27017"

@@ -1,6 +1,7 @@
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/shoes', { useNewUrlParser: true , useUnifiedTopology: true });
 mongoose.Promise = global.Promise;
+mongoose.connect('mongodb://mongo:27017/shoes', { useNewUrlParser: true , useUnifiedTopology: true })
+  .then(() => console.log('connected mongodb'));
 
 var shoeSchema = mongoose.Schema({
   id: Number,
@@ -19,11 +20,11 @@ var shoeSchema = mongoose.Schema({
 
 var Shoe = mongoose.model('Shoe', shoeSchema)
 
-var db = mongoose.connection;
-db.on('error', console.error.bind(console, 'connection error:'));
-db.once('open', function() {
-  console.log('connected')
-});
+// var db = mongoose.connection;
+// db.on('error', console.error.bind(console, 'connection error:'));
+// db.once('open', function() {
+//   console.log('connected')
+// });
 
 // module.exports = db;
 module.exports = Shoe;
