@@ -9,6 +9,8 @@ var shoeSchema = mongoose.Schema({
   old_price: Number,
   category: String,
   reviews: Number,
+  gender: String,
+  type: String,
   size: Array,
   available_colors: Array,
   carousel_images: Array,

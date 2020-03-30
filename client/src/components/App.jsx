@@ -74,9 +74,9 @@ class App extends React.Component {
                                         </li>
                                         <li className="breadcrumb-item">Home</li>
                                         <span> / </span>
-                                        <li className="breadcrumb-item">Men</li>
+                                        <li className="breadcrumb-item">{this.state.currentShoe.gender}</li>
                                         <span> / </span>
-                                        <li className="breadcrumb-item">Shoes</li>
+                                        <li className="breadcrumb-item">{this.state.currentShoe.type}</li>
                                     </ol>
                                 </div>
                             </div>
