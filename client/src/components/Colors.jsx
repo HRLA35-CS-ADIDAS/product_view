@@ -1,6 +1,4 @@
 import React from 'react';
-import axios from 'axios';
-import Magnify from './Magnify.jsx'
 
 
 class Colors extends React.Component {
@@ -62,30 +60,6 @@ class Colors extends React.Component {
                     }
 
                     )}
-
-                    {/* <div className="tick-icon">
-                        <svg class="check-icon" data-di-res-id="b2f2def1-1a5917fc" data-di-rand="1585212244738">
-                            <svg id="checkmark" viewBox="0 0 19 19"><path fill="none" stroke="currentColor" stroke-linecap="square" stroke-miterlimit="10" d="M2.5 10.5l4 4 10-10"></path></svg>
-                        </svg>
-                    </div>
-
-
-                    <div style={{
-                        backgroundImage: "url(" + `${this.props.shoe.related_shoes[0]}` + ")"
-                    }}
-                        className="circle-image">
-                    </div>
-                </div>
-
-                <div className="selection-box">
-                    <div style={{
-                        backgroundImage: "url(" + `${this.props.images[0]}` + ")"
-                    }}
-                        className="circle-image">
-                    </div>
-                </div> */}
-
-
                 </div>
             </div >
 

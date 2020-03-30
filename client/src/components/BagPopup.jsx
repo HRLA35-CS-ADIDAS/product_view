@@ -98,13 +98,13 @@ class BagPopup extends React.Component {
                                             Your Bag
                                             </h3>
                                         <div className="bag-quan">
-                                            {this.props.totalQuantity} Items
+                                            {this.props.totalQuantity + this.props.item} Items
                                         </div>
                                         <div className="price-rows">
                                             <div className="price-row">
                                                 Total Product Cost:
                                                 <div className="amount">
-                                                    ${this.props.shoe.current_price * this.props.totalQuantity}
+                                                    ${(this.props.shoe.current_price * this.props.totalQuantity) + this.props.price}
                                                 </div>
                                             </div>
                                             <div className="price-row">
@@ -117,16 +117,16 @@ class BagPopup extends React.Component {
                                         </div>
                                         <div className="price-rows2">
                                             <h5 className="price-row2">
-                                                Total Delivery Cost:
+                                                Total:
                                                 <h5 className="amount2">
-                                                    ${this.props.shoe.current_price * this.props.totalQuantity}
+                                                    ${(this.props.shoe.current_price * this.props.totalQuantity) + this.props.price}
                                                 </h5>
                                             </h5>
                                             <div className="installments">
                                                 Installment options
                                             </div>
                                             <div className="installments1">
-                                                Prefer to spread out the payment? Select ‘Affirm’ at checkout to pay in 3 interest-free installments of ${((this.props.shoe.current_price * this.props.totalQuantity) / 3).toFixed(2)}.
+                                                Prefer to spread out the payment? Select ‘Affirm’ at checkout to pay in 3 interest-free installments of ${(((this.props.shoe.current_price + this.props.price) * this.props.totalQuantity) / 3).toFixed(2)}.
                                             </div>
 
                                             <div className="view-bag-button">

@@ -1167,6 +1167,34 @@ Installments
     display: block;
 }
 
+.complete-container:hover {
+    max-width: 90px;
+    cursor: pointer;
+    position: relative;
+    margin: 25px 15px 0 0;
+    box-sizing: border-box;
+    display: block;
+    content: "";
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-bottom: 4px solid #000;   
+}
+
+.clicked-container {
+    max-width: 90px;
+    cursor: pointer;
+    position: relative;
+    margin: 25px 15px 0 0;
+    box-sizing: border-box;
+    display: block;
+    content: "";
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-bottom: 4px solid #000;   
+}
+
 .complete-product {
     position: relative;
     box-sizing: border-box;
@@ -1183,6 +1211,7 @@ Installments
 
 .complete-price-container {
     margin-top: 15px;
+    margin-bottom: 10px;
     cursor: pointer;
     box-sizing: border-box;
     display: block;

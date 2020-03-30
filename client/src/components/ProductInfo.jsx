@@ -65,7 +65,6 @@ class ProductInfo extends React.Component {
     if (this.state.selectedSize === null) {
       this.setState({
         showSize: true
-        // totalQuantity: this.state.totalQuantity + this.state.quantity
       })
     } else {
       this.setState({
@@ -73,12 +72,6 @@ class ProductInfo extends React.Component {
       })
     }
   }
-  //   } else {
-  //     this.setState({
-  //       showBag: !this.state.showBag
-  //     })
-  //   }
-  // }
 
   selectSize(size) {
     this.setState({
@@ -95,7 +88,7 @@ class ProductInfo extends React.Component {
     })
   }
 
-  toggleHeart(){
+  toggleHeart() {
     this.setState({
       heart: !this.state.heart
     })
@@ -205,7 +198,7 @@ class ProductInfo extends React.Component {
 
 
                             </ul>
-                              {this.state.pleaseSelect ? (<div className="please">Please select your size</div>) : (null)}
+                            {this.state.pleaseSelect ? (<div className="please">Please select your size</div>) : (null)}
 
                           </div>
 
@@ -325,11 +318,11 @@ class ProductInfo extends React.Component {
               </div>
               <div className="bag-container">
 
-                <BagPopup openSize={this.openSize} selectedSize={this.state.selectedSize} totalQuantity={this.state.totalQuantity} shoe={this.props.shoe} images={this.props.images} handleBag={this.handleBag} size={this.state.selectedSize} quantity={this.state.quantity} />
+                <BagPopup price={this.props.price} item={this.props.item} openSize={this.openSize} selectedSize={this.state.selectedSize} totalQuantity={this.state.totalQuantity} shoe={this.props.shoe} images={this.props.images} handleBag={this.handleBag} size={this.state.selectedSize} quantity={this.state.quantity} />
                 <div onClick={this.toggleHeart} className="heart-div">
                   <div className="toggle-heart">
                     {(this.state.heart) ? (<svg className="gl-icon-active" data-auto-id="wishlist-icon" data-di-rand="1585474990403" data-di-res-id="b103962b-ab6a442f">
-                    <svg id="wishlist-active" viewBox="0 0 20 24"><path fill="currentColor" stroke="currentColor" stroke-miterlimit="10" stroke-width="2" d="M7.38 6H4.42L2 10l8 8 8-8-2.41-4h-2.98L10 9 7.38 6z"></path></svg>
+                      <svg id="wishlist-active" viewBox="0 0 20 24"><path fill="currentColor" stroke="currentColor" stroke-miterlimit="10" stroke-width="2" d="M7.38 6H4.42L2 10l8 8 8-8-2.41-4h-2.98L10 9 7.38 6z"></path></svg>
                     </svg>) : (<svg className="gl-icon" data-auto-id="wishlist-icon" data-di-res-id="6361accf-4a701908" data-di-rand="1585359780189">
                       <svg id="wishlist-inactive" viewBox="0 0 20 24"><path fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="2" d="M7.38 6H4.42L2 10l8 8 8-8-2.41-4h-2.98L10 9 7.38 6z"></path></svg>
                     </svg>)}
@@ -340,18 +333,9 @@ class ProductInfo extends React.Component {
               <div className="bottom-links">
                 <FreeShipping />
                 <PayPal />
-
-
-
               </div>
 
             </form>
-
-
-
-
-
-
           </div>
 
         </div>

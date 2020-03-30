@@ -1,5 +1,4 @@
 import React from 'react';
-import axios from 'axios';
 import Magnify from './Magnify.jsx'
 
 class ImageCarousel extends React.Component {
@@ -118,12 +117,6 @@ class ImageCarousel extends React.Component {
                                     </div>
                                 </a>
                             </div>
-                            {/* <div className="carousel__snapper_next">
-                                <a href="#carousel__slide4" className="carousel__next"><div id="mar_carousel_next">
-                                    <svg viewBox="-9 -8 40 40"> <path d="M17.59 7l5 5-5 5M0 12h22" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="2"></path>
-                                    </svg>
-                                </div></a>
-                            </div> */}
                         </li>
                         <li id="carousel__slide4" tabIndex="0" className="carousel__slide">
                             <div onClick={this.handleZoom}>

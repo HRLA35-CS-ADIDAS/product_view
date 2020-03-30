@@ -49,7 +49,26 @@
                      "https://adidas-testbucket.s3-us-west-1.amazonaws.com/NMD_R1_Shoes_Black_FV7969_01_standard.jpg",
                      "https://adidas-testbucket.s3-us-west-1.amazonaws.com/NMD_R1+Shoes/f681053480464ff8bea5ab1b011351ba_9366.webp"
               ],
-              "matching_items" : null
+              "matching_items" : [
+                     {
+                            "name": "3-Stripes Tee",
+                            "price": 35,
+                            "size": ["S", "M", "L", "XL", "2XL"],
+                            "image": "https://adidas-testbucket.s3-us-west-1.amazonaws.com/NMD_R1+Shoes/relatedshoes1/3stripes.webp"
+                     },
+                     {
+                            "name": "Track Jacket",
+                            "price": 80,
+                            "size": ["S", "M", "L", "XL", "2XL"],
+                            "image": "https://adidas-testbucket.s3-us-west-1.amazonaws.com/NMD_R1+Shoes/relatedshoes1/trackjacket.webp"
+                     },
+                     {
+                            "name": "Trefoil Essentials Pants",
+                            "price": 55,
+                            "size": ["S", "M", "L", "XL", "2XL"],
+                            "image": "https://adidas-testbucket.s3-us-west-1.amazonaws.com/NMD_R1+Shoes/relatedshoes1/trefoil.webp"
+                     }
+              ]
        },
        {
               "id": 2,
@@ -706,7 +725,40 @@
                      "https://adidas-testbucket.s3-us-west-1.amazonaws.com/NMD_R1+Shoes/14/main.webp",
                      "https://adidas-testbucket.s3-us-west-1.amazonaws.com/NMD_R1+Shoes/15/main.webp"
               ],
-              "matching_items" : null
+              "matching_items" : [
+                     {
+                            "name": "SST 24K Track Jacket",
+                            "price": 90,
+                            "size": ["S", "M", "L", "XL", "2XL"],
+                            "image": "https://adidas-testbucket.s3-us-west-1.amazonaws.com/NMD_R1+Shoes/relatedshirt/trackjacket.webp"
+                     },
+                     {
+                            "name": "LNY Track Pants",
+                            "price": 80,
+                            "size": ["S", "L", "XL"],
+                            "image": "https://adidas-testbucket.s3-us-west-1.amazonaws.com/NMD_R1+Shoes/relatedshirt/pants.jpg"
+                     },
+                     {
+                            "name": "Superstar Shoes",
+                            "price": 80,
+                            "size": [
+                                   "5",
+                                   "5.5",
+                                   "6",
+                                   "6.5",
+                                   "7",
+                                   "7.5",
+                                   "8",
+                                   "8.5",
+                                   "9",
+                                   "9.5",
+                                   "10 ",
+                                   "10.5",
+                                   "11"
+                            ],
+                            "image": "https://adidas-testbucket.s3-us-west-1.amazonaws.com/NMD_R1+Shoes/relatedshirt/shoes.webp"
+                     }
+              ]
        },
        {
               "id": 15,

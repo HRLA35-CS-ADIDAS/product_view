@@ -1,16 +1,4 @@
 import React, { Component } from 'react';
-import ReactModal from 'react-modal';
-
-const customStyles = {
-    content: {
-        top: '25%',
-        left: '25%',
-        right: '25%',
-        bottom: '37%',
-        padding: '30px',
-        overflow: 'hidden'
-    }
-};
 
 class CompleteLook extends React.Component {
     constructor(props) {
@@ -20,7 +8,8 @@ class CompleteLook extends React.Component {
             dropDown: false,
             selectedItem: null,
             showSize: false,
-            selectedSize: null
+            selectedSize: null,
+            underlineContainer: null,
         }
         this.openModal = this.openModal.bind(this);
         this.closeModal = this.closeModal.bind(this);
@@ -28,6 +17,7 @@ class CompleteLook extends React.Component {
         this.handleSize = this.handleSize.bind(this);
         this.selectItem = this.selectItem.bind(this);
         this.selectSize = this.selectSize.bind(this);
+        this.underLine = this.underLine.bind(this);
     }
 
     openModal(e) {
@@ -41,7 +31,9 @@ class CompleteLook extends React.Component {
     }
 
     handleDrop() {
-        this.setState({ dropDown: true })
+        this.setState({
+            dropDown: true
+        })
     }
 
     selectItem(item) {
@@ -62,6 +54,12 @@ class CompleteLook extends React.Component {
         })
     }
 
+    underLine(item) {
+        this.setState({
+            underlineContainer: item
+        })
+    }
+
     render() {
         return (
             <div className="complete-div">
@@ -71,18 +69,33 @@ class CompleteLook extends React.Component {
                 <div className="complete-items">
                     <div className="complete-items-list">
                         {this.props.matching_items.map((item) => {
-                            return (
-                                <div onClick={this.handleDrop} className="complete-container">
-                                    <div className="complete-product">
-                                        <img src={item.image} onClick={() => { this.selectItem(item) }} className="complete-image" />
-                                    </div>
-                                    <div className="complete-price-container">
-                                        <div className="complete-price">
-                                            ${item.price}
+                            if (this.state.underlineContainer === item) {
+                                return (
+                                    <div onClick={this.handleDrop} className="clicked-container">
+                                        <div className="complete-product">
+                                            <img src={item.image} onClick={() => { this.selectItem(item) }} className="complete-image" />
+                                        </div>
+                                        <div className="complete-price-container">
+                                            <div className="complete-price" onClick={() => { this.underLine(item) }}>
+                                                ${item.price}
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            )
+                                )
+                            } else {
+                                return (
+                                    <div onClick={this.handleDrop} className="complete-container">
+                                        <div className="complete-product">
+                                            <img src={item.image} onClick={() => { this.selectItem(item) }} className="complete-image" />
+                                        </div>
+                                        <div className="complete-price-container">
+                                            <div className="complete-price" onClick={() => { this.underLine(item) }}>
+                                                ${item.price}
+                                            </div>
+                                        </div>
+                                    </div>
+                                )
+                            }
                         })}
                     </div>
                     {(this.state.dropDown) ? (<div className="completeDrop">
@@ -102,45 +115,45 @@ class CompleteLook extends React.Component {
 
                                     <div className="size-container-complete">
 
-                                    <button onClick={this.handleSize} className="select-size">
-                                        <span className="select">
-                                            {(this.state.selectedSize === null) ? (<span className="select-inner">SELECT SIZE</span>) : (<span className="select-inner">{this.state.selectedSize}</span>)}
+                                        <button onClick={this.handleSize} className="select-size">
+                                            <span className="select">
+                                                {(this.state.selectedSize === null) ? (<span className="select-inner">SELECT SIZE</span>) : (<span className="select-inner">{this.state.selectedSize}</span>)}
 
-                                        </span>
+                                            </span>
 
-                                        {this.state.showSize ? (<svg className="open-dropdown" data-di-res-id="3d102a33-51e27117" data-di-rand="1585301057992">
-                                            <svg id="dropdown" viewBox="0 0 16 24"><path fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="2" d="M1.5 9L8 15.5 14.5 9"></path></svg>
-                                        </svg>) : (<svg className="gl-icon-gl-custom-dropdown__select-icon" data-di-res-id="3d102a33-51e27117" data-di-rand="1585301057992">
-                                            <svg id="dropdown" viewBox="0 0 16 24"><path fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="2" d="M1.5 9L8 15.5 14.5 9"></path></svg>
-                                        </svg>)}
+                                            {this.state.showSize ? (<svg className="open-dropdown" data-di-res-id="3d102a33-51e27117" data-di-rand="1585301057992">
+                                                <svg id="dropdown" viewBox="0 0 16 24"><path fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="2" d="M1.5 9L8 15.5 14.5 9"></path></svg>
+                                            </svg>) : (<svg className="gl-icon-gl-custom-dropdown__select-icon" data-di-res-id="3d102a33-51e27117" data-di-rand="1585301057992">
+                                                <svg id="dropdown" viewBox="0 0 16 24"><path fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="2" d="M1.5 9L8 15.5 14.5 9"></path></svg>
+                                            </svg>)}
 
-                                    </button>
-                                    {this.state.showSize ? (
-                                        <div className="complete-dropdown-options">
-                                            <div className="square-list">
-                                                <ul className="size-menu">
+                                        </button>
+                                        {this.state.showSize ? (
+                                            <div className="complete-dropdown-options">
+                                                <div className="square-list">
+                                                    <ul className="size-menu">
 
-                                                    {this.state.selectedItem.size.map((size) => {
-                                                        return (
-                                                            <li className="size-item">
-                                                                <div onClick={() => this.selectSize(size)} className="button-item">
-                                                                    <b>{size}</b>
-                                                                </div>
-                                                            </li>
-                                                        )
-                                                    })}
+                                                        {this.state.selectedItem.size.map((size) => {
+                                                            return (
+                                                                <li className="size-item">
+                                                                    <div onClick={() => this.selectSize(size)} className="button-item">
+                                                                        <b>{size}</b>
+                                                                    </div>
+                                                                </li>
+                                                            )
+                                                        })}
 
 
-                                                </ul>
-                                                {this.state.pleaseSelect ? (<div className="please">Please select your size</div>) : (null)}
+                                                    </ul>
+                                                    {this.state.pleaseSelect ? (<div className="please">Please select your size</div>) : (null)}
 
-                                            </div>
+                                                </div>
 
-                                        </div>) : (null)}
+                                            </div>) : (null)}
 
-                                        </div>
+                                    </div>
 
-                                    <div className="bag-button">
+                                    <div onClick={()=>{this.props.addPrice(this.state.selectedItem.price)}} className="bag-button">
                                         <span className="before-button"></span>
                                         <span className="bag-text">ADD TO BAG</span>
                                         <svg className="gl-icon-gl-cta__icon" data-di-res-id="6361accf-c33aeebb" data-di-rand="1585359780189">

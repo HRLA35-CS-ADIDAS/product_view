@@ -122,8 +122,7 @@ class ProductDisplay extends React.Component {
                 </ReactModal>
 
                 {(this.props.matching_items === null) ? (null) : (
-                    // console.log(this.props.matching_items)
-                    <CompleteLook matching_items={this.props.matching_items}/>
+                    <CompleteLook addPrice={this.props.addPrice} matching_items={this.props.matching_items} />
                 )}
 
 
