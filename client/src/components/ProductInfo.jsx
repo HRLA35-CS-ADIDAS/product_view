@@ -236,7 +236,7 @@ class ProductInfo extends React.Component {
 
                       {this.state.showQuan ? (<div className="quantity-dropdown-menu">
 
-                        <ul>
+                        <ul className="quan-list">
 
                           {(this.state.quantity === 1) ? (
                             <li className="quantity-dropdown-item">

@@ -36,11 +36,6 @@ class App extends React.Component {
     }
 
     changeShoe(newImg) {
-        // for(var key in this.state.products){
-        //     console.log(key)
-        // }
-        // console.log(this.state.products[key])
-        // console.log(this.state.currentShoe)
         for (var key in this.state.products) {
             if (this.state.products[key].carousel_images[0] === newImg) {
                 this.setState({

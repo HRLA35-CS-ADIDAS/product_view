@@ -1,52 +1,3 @@
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
-/* 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
-} */
-/* HTML5 display-role reset for older browsers */
-/* article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
-}
-body {
-	line-height: 1;
-}
-ol, ul {
-	list-style: none;
-}
-blockquote, q {
-	quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
-}
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
-} */
-
 /*
   ========================================
   Body
@@ -77,30 +28,15 @@ body {
   ========================================
 */
 
-/* #mainModalButton {
-    position: absolute;
-    left: 95%;
-    top: 5%;
-    bottom: -5%;
-    right: 20px;
-    height: 34px;
-    width: 34px;
-    font-size: 1.5rem;
-    font-weight: lighter;
-    z-index: 1;
-    border-color: black;
-    border-radius: 0px;
-  }
-
-  #closeButton {
-    position: relative;
-    left: 0px;
-    top: 0px;
-  } */
+.carousel-modal {
+  height: 20px;
+  background-color: #ebedee;
+  outline: none;
+}
 
   .modal-root {
     position: absolute;
-    z-index: 999;
+    /* z-index: 999; */
     box-sizing: border-box;
     display: block;
 }
@@ -147,7 +83,6 @@ body {
     width: 100%;
     padding: 0;
     display: flex;
-    /* background-color: #ebedee; */
     border-bottom: 0 solid #000;
     border-left: 0 solid #000;
     border-radius: 0;
@@ -237,6 +172,167 @@ body {
     visibility: visible;
     pointer-events: all;
 }
+
+/*
+  ========================================
+  Carousel
+  ========================================
+*/
+
+.carousel {
+    display: flex;
+    position: relative;
+    object-fit: cover;
+    perspective: 100px;
+    height: 720px;
+    background-color: rgb(235, 237, 238);
+}
+
+.carousel::before {
+    background-color: black;
+  }
+  
+  .carousel::after {
+    background-color: black;
+  }
+
+.carousel::before .carousel__prev {
+    left: 3rem;
+  }
+  
+  .carousel::before, .carousel::after, .carousel__prev, .carousel__next {
+    position: absolute;
+    top: 50%;
+    bottom: auto;
+    transform: translateY(-50%);
+    font-size: 0px;
+    outline: 0px;
+  }
+
+  .carousel::before, .carousel::after {
+    content: "";
+    background-size: 1.5rem 1.5rem;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    pointer-events: none;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+  .carousel::after, .carousel__next {
+    right: 3rem;
+  }
+
+.carousel-viewport {
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    display: flex;
+    counter-reset: item 0;
+    scroll-behavior: smooth;
+    /* height: 720px; */
+    animation-name: tonext, snap;
+    animation-duration: 0s;
+    scroll-snap-type: x mandatory;
+    overflow: hidden;
+    list-style: none;
+}
+
+.carousel__slide {
+    position: relative;
+    flex: 1 0 100%;
+    height: 720px;
+    width: 100%;
+    outline: none;
+  }
+  
+  .carousel__slide:before {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%,-40%,70px);
+    color: #fff;
+    font-size: 2em;
+  }
+
+  .fluid1 {
+    max-width: 720px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    font-family: Arial;
+    line-height: 1.3;
+    font-size: 16px;
+    position: relative;
+    /* object-fit: cover; */
+  }
+
+  .fluid__image-container {
+    justify-content: center;
+    cursor: url(https://www.adidas.com/glass/react/1a20ddb/assets/img/icon-adidas-cursor-expand.png) 24 24, auto;
+  }
+
+  .carousel-image {
+    position: relative;
+    height: 100%;
+    width: 100%;
+  }
+
+  .carousel__snapper_prev,
+.carousel__snapper_next,
+.carousel__slide,
+.carousel__viewport,
+.modalImage {
+  outline: none;
+}
+
+  .carousel__snapper_prev {
+    background-color: black;
+  }
+
+  .carousel::before, .carousel__prev {
+    left: 3rem;
+  }
+
+  #mar_carousel_prev {
+    padding-left: 10%;
+    color: black;
+    background-color: rgb(235, 237, 238);
+    width: 39px;
+    height: 39px;
+    transform: scale(-1, 1);
+  }
+  
+  #mar_carousel_prev:hover{
+    transition-duration: .8s;
+    color: transparent;
+    background-color: rgb(235, 237, 238);
+  }
+  #mar_carousel_next:hover{
+    transition-duration: .8s;
+    color: transparent;
+    background-color: rgb(235, 237, 238);
+  }
+  #mar_carousel_next {
+    color: black;
+    background-color: rgb(235, 237, 238);
+    padding-right: 10%;
+    width: 39px;
+    height: 39px;
+  }
+  
+  #mar_carousel_prev:hover,
+  #mar_carousel_next:hover{
+    color:white;
+    background-color:black;
+  }
+
+/*
+========================================
+Installments
+========================================
+*/
 
 .installments1 {
     font-size: 16px;
@@ -343,14 +439,12 @@ body {
 }
 
 .carousel-image {
-    z-index: 999;
     height: 700px;
     background-color: #ebedee;
     background-size: contain;
     background-repeat: no-repeat;
     background-position: 50%;
     width: 100%;
-    cursor: url(/glass/react/1a20ddb/assets/img/icon-adidas-cursor-zoom.png) 24 24,auto;
 }
 
 
@@ -360,11 +454,20 @@ body {
     top: 0px;
     left: 0px;
     right: 0px;
-    bottom: 10px;
-    padding-top: 30px;
+    bottom: 0px;
+    /* padding-top: 30px; */
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+
+.Overlay-popup {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
     background-color: rgba(0, 0, 0, 0.4);
     overflow: hidden;
-  }
+}
 
 /* #mainModalButton {
     position: absolute;
@@ -457,6 +560,7 @@ body {
     width: auto;
     box-sizing: border-box;
     display: block;
+    cursor: pointer;
 }
 
 .breadcrumb2 {
@@ -520,6 +624,7 @@ body {
 }
 
 .back-button {
+    cursor: pointer;
     margin-right: 15px;
     text-transform: uppercase;
     font-size: 13px;
@@ -622,16 +727,11 @@ body {
 */
 
 .modalImage {
-    position: relative;
-    min-height: 800px;
-    /* padding-bottom: 20px;
-    padding-left: 0px;
-    padding-right: 0px;
-    padding-top: 0px;
-    top: 20px;
-    left: 0px;
-    right: 0px; */
-    z-index: 300; 
+    position: absolute;
+    top: 30px;
+    min-height: 720px;
+    /* z-index: 300; */
+    overflow: hidden;
 }
 
 .product-container {
@@ -740,7 +840,7 @@ body {
 }
 
 .large-product:hover {
-    cursor: url(https://www.adidas.com/glass/react/1a20ddb/assets/img/icon-adidas-cursor-expand.png) 24 24, auto;
+    cursor: url(https://www.adidas.com/glass/react/1a20ddb/assets/img/icon-adidas-cursor-zoom.png) 24 24, auto;
 }
 
 .left-arrow {
@@ -1867,6 +1967,11 @@ body {
     transform: scaleY(1); */
 }
 
+.quan-list {
+    padding-inline-start: 0;
+    overflow: hidden;
+}
+
 .quantity-selector {
     padding-left: 10px;
     position: relative;
@@ -2880,6 +2985,7 @@ body {
     line-height: 1.3;
     font-size: 16px;
     position: relative;
+    /* cursor: url(https://www.adidas.com/glass/react/1a20ddb/assets/img/icon-adidas-cursor-zoomed.png), auto; */
   }
 
   .fluid:hover {
