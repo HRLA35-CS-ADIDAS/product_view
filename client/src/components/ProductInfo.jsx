@@ -17,7 +17,8 @@ class ProductInfo extends React.Component {
       selectedSize: null,
       quantity: 1,
       totalQuantity: 1,
-      heart: false
+      heart: false,
+      pleaseSelect: false
     }
     this.handleSize = this.handleSize.bind(this);
     this.handleQuan = this.handleQuan.bind(this);
@@ -33,7 +34,8 @@ class ProductInfo extends React.Component {
     if (this.state.showSize) {
       this.setState({
         showSize: !this.state.showSize,
-        showQuan: false
+        showQuan: false,
+        pleaseSelect: false
       })
     } else {
       this.setState({
@@ -45,7 +47,8 @@ class ProductInfo extends React.Component {
 
   openSize() {
     this.setState({
-      showSize: true
+      showSize: true,
+      pleaseSelect: true
     })
   }
 
@@ -61,7 +64,7 @@ class ProductInfo extends React.Component {
     e.preventDefault()
     if (this.state.selectedSize === null) {
       this.setState({
-        showSize: true,
+        showSize: true
         // totalQuantity: this.state.totalQuantity + this.state.quantity
       })
     } else {
@@ -208,6 +211,8 @@ class ProductInfo extends React.Component {
                                   </li>
                                 )
                               })}
+
+                              {this.state.pleaseSelect ? (<div className="please">Please select your size</div>) : (null)}
 
                             </ul>
 

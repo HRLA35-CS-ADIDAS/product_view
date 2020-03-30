@@ -1859,6 +1859,12 @@ Installments
     cursor: pointer;
 }
 
+.please {
+    margin-top: 10px;
+    color: red;
+    font: bold;
+}
+
 .button-item {
     width: 100%;
     font-size: 14px;
