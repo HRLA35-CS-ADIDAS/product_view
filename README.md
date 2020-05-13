@@ -9,6 +9,7 @@ This project recreates an fully-functioning clone of an [Adidas.com](https://www
 ## Usage
 
 <h3>Product Selector<h3>
+
 ![Product selector](https://i.imgur.com/ErhD0tI.gif)
 - Conditionally renders new item onclick
 
