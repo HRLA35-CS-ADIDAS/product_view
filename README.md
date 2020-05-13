@@ -1,3 +1,7 @@
-<h1>Adidas Front-End Capstone<h1>
-# testing formals
-## double hashtags
+<img src="adidas.png" align="center"/>
+
+# Adidas Product Display Mock-Up
+
+## Front-End Capstone
+
+This project is a mock-up of an Adidas Product Display page.
