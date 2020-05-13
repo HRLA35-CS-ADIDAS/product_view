@@ -8,6 +8,8 @@ This project recreates an fully-functioning clone of an [Adidas.com](https://www
 
 ## Usage
 
+<iframe src="https://giphy.com/embed/dWNhYO6pCNzlyiXrHp" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/dWNhYO6pCNzlyiXrHp">via GIPHY</a></p>
+
 ## Installation
 
 - Download repository onto local machine
