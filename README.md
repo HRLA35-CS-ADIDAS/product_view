@@ -8,7 +8,7 @@ This project recreates an fully-functioning clone of an [Adidas.com](https://www
 
 ## Usage
 
-![item selector](https://giphy.com/embed/dWNhYO6pCNzlyiXrHp)
+![item selector](https://gph.is/g/4oR2WRP)
 
 ## Installation
 
