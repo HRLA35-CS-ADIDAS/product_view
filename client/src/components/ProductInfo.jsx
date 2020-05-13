@@ -95,9 +95,6 @@ class ProductInfo extends React.Component {
   }
 
   render() {
-
-
-
     var affirmPrice = this.props.shoe.current_price / 3
 
     return (
@@ -162,7 +159,6 @@ class ProductInfo extends React.Component {
             <form className="bag-form">
               <SizeGuide />
 
-
               <div className="size-container">
                 <div className="size-container2">
                   <div className="size-container3">
@@ -195,7 +191,6 @@ class ProductInfo extends React.Component {
                                   </li>
                                 )
                               })}
-
 
                             </ul>
                             {this.state.pleaseSelect ? (<div className="please">Please select your size</div>) : (null)}
@@ -304,20 +299,12 @@ class ProductInfo extends React.Component {
                                 <div className="quantity-dropdown-button" onClick={() => { this.selectQuan(10) }}>10</div>
                               </li>)}
                         </ul>
-
-
                       </div>) : (null)}
-
                     </div>
-
                   </div>
-
                 </div>
-
-
               </div>
               <div className="bag-container">
-
                 <BagPopup price={this.props.price} item={this.props.item} openSize={this.openSize} selectedSize={this.state.selectedSize} totalQuantity={this.state.totalQuantity} shoe={this.props.shoe} images={this.props.images} handleBag={this.handleBag} size={this.state.selectedSize} quantity={this.state.quantity} />
                 <div onClick={this.toggleHeart} className="heart-div">
                   <div className="toggle-heart">
@@ -339,7 +326,6 @@ class ProductInfo extends React.Component {
           </div>
 
         </div>
-
       </div >
     )
   }

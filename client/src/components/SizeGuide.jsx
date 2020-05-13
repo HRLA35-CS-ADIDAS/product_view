@@ -38,7 +38,6 @@ class SizeGuide extends React.Component {
                     <div onClick={this.openModal} className="size-guide">
                         <svg className="gl-icon-gl-icon--size-communication" data-di-res-id="3d102a33-2fb4d1f3" data-di-rand="1585301057992">
                             <svg className="size-guider" viewBox="0 0 19 19"><g fill="none" stroke="currentColor" stroke-miterlimit="10"><path d="M.5 6.5h18v6H.5z"></path><path stroke-linecap="square" d="M3.5 12.5v-3m3 3v-2m3 2v-3m6 3v-3m-3 3v-2"></path></g></svg>
-
                         </svg>
               Size Guide</div>
                 </div>
@@ -54,9 +53,9 @@ class SizeGuide extends React.Component {
                         </svg>
                     </button>
                     <div className="learn-more-padding">
-                        <img src="https://adidas-testbucket.s3-us-west-1.amazonaws.com/Screen+Shot+2020-03-28+at+3.10.02+PM.jpg" className="static-image"/>
-                        <img src="https://adidas-testbucket.s3-us-west-1.amazonaws.com/Screen+Shot+2020-03-28+at+3.10.34+PM.jpg" className="static-image"/>
-                        <img src="https://adidas-testbucket.s3-us-west-1.amazonaws.com/Screen+Shot+2020-03-28+at+3.10.46+PM.jpg" className="static-image"/>
+                        <img src="https://adidas-testbucket.s3-us-west-1.amazonaws.com/Screen+Shot+2020-03-28+at+3.10.02+PM.jpg" className="static-image" />
+                        <img src="https://adidas-testbucket.s3-us-west-1.amazonaws.com/Screen+Shot+2020-03-28+at+3.10.34+PM.jpg" className="static-image" />
+                        <img src="https://adidas-testbucket.s3-us-west-1.amazonaws.com/Screen+Shot+2020-03-28+at+3.10.46+PM.jpg" className="static-image" />
                     </div>
                 </ReactModal>
             </div >

@@ -6,6 +6,15 @@
 
 This project recreates a fully-functioning [Adidas.com](https://www.adidas.com/) item product page from scratch. Working modules include the product display, carousel, product selector, and "Add-To-Bag" modal. Each of these unique components are implemented using React.js. Realistic data sets are created and stored using MongoDB. CSS best practices were followed to imitate the original site's exact styling. The project was later converted to React Redux to encourage top-tier architecture and stay up to date with industry standards.
 
+## Installation
+
+- Download repository onto local machine
+- Run <b>npm install</b> in terminal to download dependencies
+- Run <b>npm start</b> to start server and access database
+- Enter directory named <b>db</b> and run <b>node seed.js</b> to populate MongoDB
+- Run <b>npm run-script build</b> to convert JSX into bundle
+- Access <b>localhost:3000</b> on browser to view page
+
 ## Usage
 
 <h3>Product Display</h3>
@@ -34,12 +43,3 @@ This project recreates a fully-functioning [Adidas.com](https://www.adidas.com/)
 ![Add-To-Bag](https://i.imgur.com/Bxu8Exp.gif)
 - Dynamically populates bag modal when size and quantity is selected
 - Complete-the-look feature increments total price and quantity of items accordingly
-
-## Installation
-
-- Download repository onto local machine
-- Run <b>npm install</b> in terminal to download dependencies
-- Run <b>npm start</b> to start server and access database
-- Enter directory named <b>db</b> and run <b>node seed.js</b> to populate MongoDB
-- Run <b>npm run-script build</b> to convert JSX into bundle
-- Access <b>localhost:3000</b> on browser to view page
