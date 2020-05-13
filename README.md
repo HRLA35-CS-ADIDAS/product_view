@@ -4,11 +4,13 @@
 
 ## Front-End Capstone
 
-This project recreates an fully-functioning clone of an [Adidas.com](https://www.adidas.com/) item product page from scratch. Working modules include the item display, carousel, add-to-bag modal, and item selector- each of them implemented using React. Realistic data sets are created and stored using MongoDB. CSS best practices were followed to imitate the original site's exact styling. The project was later converted to React Redux to encourage top-tier architecture and stay up to date with industry standards.
+This project recreates an fully-functioning clone of an [Adidas.com](https://www.adidas.com/) item product page from scratch. Working modules include the item display, carousel, add-to-bag modal, and product selector. Each of these unique components are implemented using React. Realistic data sets are created and stored using MongoDB. CSS best practices were followed to imitate the original site's exact styling. The project was later converted to React Redux to encourage top-tier architecture and stay up to date with industry standards.
 
 ## Usage
 
-![item selector](https://i.imgur.com/ErhD0tI.gif)
+<h3>Product Selector<h3>
+![Product selector](https://i.imgur.com/ErhD0tI.gif)
+- Conditionally renders new item onclick
 
 ## Installation
 
