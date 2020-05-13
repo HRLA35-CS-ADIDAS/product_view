@@ -1,4 +1,4 @@
-<img src="adidas.png" align="center"/>
+<img src="adidas.png" style="max-height: 50%; max-width: 50%;" align="center"/>
 
 # Adidas Product Display Mock-Up
 
