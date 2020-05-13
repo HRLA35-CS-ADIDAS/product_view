@@ -270,7 +270,7 @@ body {
 
   .fluid__image-container {
     justify-content: center;
-    cursor: url(https://www.adidas.com/glass/react/1a20ddb/assets/img/icon-adidas-cursor-expand.png) 24 24, auto;
+    cursor: url(https://www.adidas.com/glass/react/47d358b/assets/img/icon-adidas-cursor-zoom.png) 24 24, auto;
   }
 
   .carousel-image {
@@ -840,7 +840,7 @@ Installments
 }
 
 .large-product:hover {
-    cursor: url(https://www.adidas.com/glass/react/1a20ddb/assets/img/icon-adidas-cursor-zoom.png) 24 24, auto;
+    cursor: url(https://www.adidas.com/glass/react/47d358b/assets/img/icon-adidas-cursor-expand.png) 24 24, auto;
 }
 
 .left-arrow {

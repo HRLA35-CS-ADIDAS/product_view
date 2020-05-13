@@ -4,19 +4,20 @@
 
 ## Front-End Capstone
 
-This project recreates an fully-functioning clone of an [Adidas.com](https://www.adidas.com/) item product page from scratch. Working modules include the product display, carousel, product selector, and "Add-To-Bag" modal. Each of these unique components are implemented using React. Realistic data sets are created and stored using MongoDB. CSS best practices were followed to imitate the original site's exact styling. The project was later converted to React Redux to encourage top-tier architecture and stay up to date with industry standards.
+This project recreates a fully-functioning clone of an [Adidas.com](https://www.adidas.com/) item product page from scratch. Working modules include the product display, carousel, product selector, and "Add-To-Bag" modal. Each of these unique components are implemented using React.js. Realistic data sets are created and stored using MongoDB. CSS best practices were followed to imitate the original site's exact styling. The project was later converted to React Redux to encourage top-tier architecture and stay up to date with industry standards.
 
 ## Usage
 
 <h3>Product Display</h3>
 
-![Product Display](https://i.imgur.com/T5N8NUO.gif)
+![Product Display](https://i.imgur.com/VFtHST0.gif)
 - Renders onclick from library of related images
 - Functional arrow icons browse items
+- Cursor icon changes on hover
 
 <h3>Carousel</h3>
 
-![Carousel](https://i.imgur.com/Smeswi1.gif)
+![Carousel](https://i.imgur.com/Sv8px5W.gif)
 - Arrow icon triggers slide transition into next items
 - Left and right icon disappear on first and last item respectively
 - Utilizes magnify feature onclick
