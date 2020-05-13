@@ -39,7 +39,7 @@ This project recreates a fully-functioning [Adidas.com](https://www.adidas.com/)
 
 - Download repository onto local machine
 - Run <b>npm install</b> in terminal to download dependencies
-- Run <i>"npm start"</i> to start server and access database
-- Enter directory named <i>"db"</i> and run <i>"node seed.js"</i> to populate MongoDB
-- Run <i>"npm run-script build"</i> to convert JSX into bundle
-- Access <i>"localhost:3000"</i> on browser to view page
+- Run <b>npm start</b> to start server and access database
+- Enter directory named <b>db</b> and run <b>node seed.js</b> to populate MongoDB
+- Run <b>npm run-script build</b> to convert JSX into bundle
+- Access <b>localhost:3000</b> on browser to view page
