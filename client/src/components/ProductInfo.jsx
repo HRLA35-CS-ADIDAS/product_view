@@ -7,8 +7,7 @@ import PayPal from './PayPal.jsx';
 import SizeGuide from './SizeGuide.jsx';
 import BagPopup from './BagPopup.jsx';
 import { useSelector, useDispatch } from 'react-redux';
-import { fill } from '../actions/index';
-
+import { fill } from '../redux/actions/index';
 
 export default function ProductInfo(props) {
   const toggle = useSelector(state => state.heartToggle);
