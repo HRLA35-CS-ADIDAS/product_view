@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-export const FETCH_PRODUCTS_BEGIN   = 'FETCH_PRODUCTS_BEGIN';
+export const FETCH_PRODUCTS_BEGIN = 'FETCH_PRODUCTS_BEGIN';
 export const FETCH_PRODUCTS_SUCCESS = 'FETCH_PRODUCTS_SUCCESS';
 export const FETCH_PRODUCTS_FAILURE = 'FETCH_PRODUCTS_FAILURE';
 
@@ -11,18 +11,18 @@ export const FETCH_PRODUCTS_FAILURE = 'FETCH_PRODUCTS_FAILURE';
 */
 
 export const fetchData = () => {
-    return(dispatch)=>{
-        dispatch(fetchProductsBegin)
-        axios.get('/products')
-        .then((response)=>{
-            const data = response.data[(Math.floor(response.data.length * Math.random()))]
-            dispatch(fetchProductsSuccess(data))
-        })
-        .catch(error => {
-            const errorMsg = error.message
-            dispatch(fetchProductsFailure(errorMsg))
-        });
-    }
+  return (dispatch) => {
+    dispatch(fetchProductsBegin)
+    axios.get('/products')
+      .then((response) => {
+        const data = response.data[(Math.floor(response.data.length * Math.random()))]
+        dispatch(fetchProductsSuccess(data))
+      })
+      .catch(error => {
+        const errorMsg = error.message
+        dispatch(fetchProductsFailure(errorMsg))
+      });
+  }
 }
 
 export const fetchProductsBegin = () => ({
@@ -45,17 +45,37 @@ export const fetchProductsFailure = error => ({
   ========================================
 */
 
-export const increaseArrow = () => {
+export const increaseArrow = (images) => {
   return {
-    type: 'INCREASE'
+    type: 'INCREASE',
+    payload: images
   }
 }
 
-export const decreaseArrow = () => {
+export const decreaseArrow = (images) => {
   return {
-    type: 'DECREASE'
+    type: 'DECREASE',
+    payload: images
   }
 }
+
+/*
+  ========================================
+  Product Display Modal
+  ========================================
+*/
+
+export const showDisplayModal = () => {
+  return {
+    type: 'SHOW'
+  };
+};
+
+export const hideDisplayModal = () => {
+  return {
+    type: 'HIDE'
+  };
+};
 
 /*
   ========================================
@@ -65,6 +85,6 @@ export const decreaseArrow = () => {
 
 export const fill = () => {
   return {
-      type: 'TOGGLE'
+    type: 'TOGGLE'
   };
 };
