@@ -4,11 +4,11 @@ export const FETCH_PRODUCTS_BEGIN   = 'FETCH_PRODUCTS_BEGIN';
 export const FETCH_PRODUCTS_SUCCESS = 'FETCH_PRODUCTS_SUCCESS';
 export const FETCH_PRODUCTS_FAILURE = 'FETCH_PRODUCTS_FAILURE';
 
-export const fill = () => {
-    return {
-        type: 'TOGGLE'
-    };
-};
+/*
+  ========================================
+  Fetch data
+  ========================================
+*/
 
 export const fetchData = () => {
     return(dispatch)=>{
@@ -38,3 +38,33 @@ export const fetchProductsFailure = error => ({
   type: FETCH_PRODUCTS_FAILURE,
   payload: { error }
 });
+
+/*
+  ========================================
+  Next and previous arrows
+  ========================================
+*/
+
+export const increaseArrow = () => {
+  return {
+    type: 'INCREASE'
+  }
+}
+
+export const decreaseArrow = () => {
+  return {
+    type: 'DECREASE'
+  }
+}
+
+/*
+  ========================================
+  Toggle heart icon
+  ========================================
+*/
+
+export const fill = () => {
+  return {
+      type: 'TOGGLE'
+  };
+};
