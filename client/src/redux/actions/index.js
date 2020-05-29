@@ -80,13 +80,13 @@ export const setCount = (index) => {
 
 export const showDisplayModal = () => {
   return {
-    type: 'SHOW'
+    type: 'SHOW_MODAL'
   };
 };
 
 export const hideDisplayModal = () => {
   return {
-    type: 'HIDE'
+    type: 'HIDE_MODAL'
   };
 };
 
@@ -110,12 +110,50 @@ export const magnifyOut = () => {
 
 /*
   ========================================
+  Size Selector
+  ========================================
+*/
+
+export const toggleSize = () => {
+  return {
+    type: 'TOGGLE_SIZE'
+  };
+};
+
+export const selectSize = (size) => {
+  return {
+    type: 'SELECT_SIZE',
+    payload: size
+  };
+};
+
+/*
+  ========================================
+  Quantity Selector
+  ========================================
+*/
+
+export const toggleQuan = () => {
+  return {
+    type: 'TOGGLE_QUAN'
+  };
+};
+
+export const selectQuan = (quantity) => {
+  return {
+    type: 'SELECT_QUAN',
+    payload: quantity
+  };
+};
+
+/*
+  ========================================
   Toggle heart icon
   ========================================
 */
 
 export const fill = () => {
   return {
-    type: 'TOGGLE'
+    type: 'TOGGLE_HEART'
   };
 };

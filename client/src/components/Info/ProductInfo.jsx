@@ -7,14 +7,14 @@ import PayPal from './PayPal.jsx';
 import SizeGuide from './SizeGuide.jsx';
 import BagPopup from '../Others/BagPopup.jsx';
 import { useSelector, useDispatch } from 'react-redux';
-import { fill } from '../../redux/actions/index';
+import { fill, toggleSize, selectSize, toggleQuan, selectQuan } from '../../redux/actions/index';
 import { connect } from 'react-redux';
 
 class ProductInfo extends React.Component {
 
   render() {
-    const { fill, toggle } = this.props;
-    const { old_price, current_price, name, category, reviews } = this.props.data;
+    const { fill, toggle, sizeDropdown, toggleSize, selectSize, selectedSize, showMessage, selectedQuan, selectQuan, toggleQuan, quanDropdown } = this.props;
+    const { old_price, current_price, name, category, reviews, size } = this.props.data;
 
     var affirmPrice = current_price / 3
     return (
@@ -83,144 +83,144 @@ class ProductInfo extends React.Component {
                 <div className="size-container2">
                   <div className="size-container3">
                     <div className="size-container4">
-                      {/* <button onClick={this.handleSize} className="select-size">
+                      <button onClick={() => toggleSize()} className="select-size">
                         <span className="select">
-                          {(this.state.selectedSize === null) ? (<span className="select-inner">SELECT SIZE</span>) : (<span className="select-inner">{this.state.selectedSize}</span>)}
+                          {(selectedSize === null) ? (<span className="select-inner">SELECT SIZE</span>) : (<span className="select-inner">{selectedSize}</span>)}
 
                         </span>
 
-                        {this.state.showSize ? (<svg className="open-dropdown" data-di-res-id="3d102a33-51e27117" data-di-rand="1585301057992">
+                        {sizeDropdown ? (<svg className="open-dropdown" data-di-res-id="3d102a33-51e27117" data-di-rand="1585301057992">
                           <svg id="dropdown" viewBox="0 0 16 24"><path fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="2" d="M1.5 9L8 15.5 14.5 9"></path></svg>
                         </svg>) : (<svg className="gl-icon-gl-custom-dropdown__select-icon" data-di-res-id="3d102a33-51e27117" data-di-rand="1585301057992">
                           <svg id="dropdown" viewBox="0 0 16 24"><path fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="2" d="M1.5 9L8 15.5 14.5 9"></path></svg>
                         </svg>)}
 
-                      </button> */}
+                      </button>
 
-                      {/* {this.state.showSize ? (
+                      {sizeDropdown ? (
                         <div className="dropdown-options">
                           <div className="square-list">
                             <ul className="size-menu">
 
-                              {this.props.shoe.size.map((size) => {
+                              {size.map((shoeSize) => {
                                 return (
                                   <li className="size-item">
-                                    <div onClick={() => this.selectSize(size)} className="button-item">
-                                      <b>{size}</b>
+                                    <div onClick={() => {selectSize(shoeSize); toggleSize();}} className="button-item">
+                                      <b>{shoeSize}</b>
                                     </div>
                                   </li>
                                 )
                               })}
 
                             </ul>
-                            {this.state.pleaseSelect ? (<div className="please">Please select your size</div>) : (null)}
+                            {/* {showMessage ? (<div className="please">Please select your size</div>) : (null)} */}
 
                           </div>
 
-                        </div>) : (null)} */}
+                        </div>) : (null)}
                     </div>
                   </div>
                 </div>
 
                 <div className="quantity-selector">
                   <div className="inner-quantity">
-                    {/* <div className="quantity-dropdown">
-                      <button onClick={this.handleQuan} className="quantity-button">
+                    <div className="quantity-dropdown">
+                      <button onClick={() => toggleQuan()} className="quantity-button">
                         <span className="dropdown-number">
                           <span className="dropdown-inner-number">
-                            {this.state.quantity}
+                            {selectedQuan}
                           </span>
                         </span>
-                        {this.state.showQuan ? (<svg className="open-dropdown" data-di-res-id="3d102a33-51e27117" data-di-rand="1585301057992">
+                        {quanDropdown ? (<svg className="open-dropdown" data-di-res-id="3d102a33-51e27117" data-di-rand="1585301057992">
                           <svg id="dropdown" viewBox="0 0 16 24"><path fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="2" d="M1.5 9L8 15.5 14.5 9"></path></svg>
                         </svg>) : (<svg className="gl-icon-gl-custom-dropdown__select-icon" data-di-res-id="3d102a33-51e27117" data-di-rand="1585301057992">
                           <svg id="dropdown" viewBox="0 0 16 24"><path fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="2" d="M1.5 9L8 15.5 14.5 9"></path></svg>
                         </svg>)}
                       </button>
 
-                      {this.state.showQuan ? (<div className="quantity-dropdown-menu">
+                      {quanDropdown ? (<div className="quantity-dropdown-menu">
 
                         <ul className="quan-list">
 
-                          {(this.state.quantity === 1) ? (
+                          {(selectedQuan === 1) ? (
                             <li className="quantity-dropdown-item">
-                              <div className="quantity-dropdown-button-clicked" onClick={() => { this.selectQuan(1) }}>1</div>
+                              <div className="quantity-dropdown-button-clicked" onClick={() => { selectQuan(1) ; toggleQuan(); }}>1</div>
                             </li>) : (
                               <li className="quantity-dropdown-item">
-                                <div className="quantity-dropdown-button" onClick={() => { this.selectQuan(1) }}>1</div>
+                                <div className="quantity-dropdown-button" onClick={() => { selectQuan(1) ; toggleQuan(); }}>1</div>
                               </li>)}
 
-                          {(this.state.quantity === 2) ? (
+                          {(selectedQuan === 2) ? (
                             <li className="quantity-dropdown-item">
-                              <div className="quantity-dropdown-button-clicked" onClick={() => { this.selectQuan(2) }}>2</div>
+                              <div className="quantity-dropdown-button-clicked" onClick={() => { selectQuan(2) ; toggleQuan(); }}>2</div>
                             </li>) : (
                               <li className="quantity-dropdown-item">
-                                <div className="quantity-dropdown-button" onClick={() => { this.selectQuan(2) }}>2</div>
+                                <div className="quantity-dropdown-button" onClick={() => { selectQuan(2) ; toggleQuan(); }}>2</div>
                               </li>)}
 
 
-                          {(this.state.quantity === 3) ? (
+                          {(selectedQuan === 3) ? (
                             <li className="quantity-dropdown-item">
-                              <div className="quantity-dropdown-button-clicked" onClick={() => { this.selectQuan(3) }}>3</div>
+                              <div className="quantity-dropdown-button-clicked" onClick={() => { selectQuan(3) ; toggleQuan(); }}>3</div>
                             </li>) : (
                               <li className="quantity-dropdown-item">
-                                <div className="quantity-dropdown-button" onClick={() => { this.selectQuan(3) }}>3</div>
+                                <div className="quantity-dropdown-button" onClick={() => { selectQuan(3) ; toggleQuan(); }}>3</div>
                               </li>)}
 
-                          {(this.state.quantity === 4) ? (
+                          {(selectedQuan === 4) ? (
                             <li className="quantity-dropdown-item">
-                              <div className="quantity-dropdown-button-clicked" onClick={() => { this.selectQuan(4) }}>4</div>
+                              <div className="quantity-dropdown-button-clicked" onClick={() => { selectQuan(4) ; toggleQuan(); }}>4</div>
                             </li>) : (
                               <li className="quantity-dropdown-item">
-                                <div className="quantity-dropdown-button" onClick={() => { this.selectQuan(4) }}>4</div>
+                                <div className="quantity-dropdown-button" onClick={() => { selectQuan(4) ; toggleQuan(); }}>4</div>
                               </li>)}
 
-                          {(this.state.quantity === 5) ? (
+                          {(selectedQuan === 5) ? (
                             <li className="quantity-dropdown-item">
-                              <div className="quantity-dropdown-button-clicked" onClick={() => { this.selectQuan(5) }}>5</div>
+                              <div className="quantity-dropdown-button-clicked" onClick={() => { selectQuan(5) ; toggleQuan(); }}>5</div>
                             </li>) : (
                               <li className="quantity-dropdown-item">
-                                <div className="quantity-dropdown-button" onClick={() => { this.selectQuan(5) }}>5</div>
+                                <div className="quantity-dropdown-button" onClick={() => { selectQuan(5) ; toggleQuan(); }}>5</div>
                               </li>)}
 
-                          {(this.state.quantity === 6) ? (
+                          {(selectedQuan === 6) ? (
                             <li className="quantity-dropdown-item">
-                              <div className="quantity-dropdown-button-clicked" onClick={() => { this.selectQuan(6) }}>6</div>
+                              <div className="quantity-dropdown-button-clicked" onClick={() => { selectQuan(6) ; toggleQuan(); }}>6</div>
                             </li>) : (
                               <li className="quantity-dropdown-item">
-                                <div className="quantity-dropdown-button" onClick={() => { this.selectQuan(6) }}>6</div>
+                                <div className="quantity-dropdown-button" onClick={() => { selectQuan(6) ; toggleQuan(); }}>6</div>
                               </li>)}
-                          {(this.state.quantity === 7) ? (
+                          {(selectedQuan === 7) ? (
                             <li className="quantity-dropdown-item">
-                              <div className="quantity-dropdown-button-clicked" onClick={() => { this.selectQuan(7) }}>7</div>
+                              <div className="quantity-dropdown-button-clicked" onClick={() => { selectQuan(7) ; toggleQuan(); }}>7</div>
                             </li>) : (
                               <li className="quantity-dropdown-item">
-                                <div className="quantity-dropdown-button" onClick={() => { this.selectQuan(7) }}>7</div>
+                                <div className="quantity-dropdown-button" onClick={() => { selectQuan(7) ; toggleQuan(); }}>7</div>
                               </li>)}
-                          {(this.state.quantity === 8) ? (
+                          {(selectedQuan === 8) ? (
                             <li className="quantity-dropdown-item">
-                              <div className="quantity-dropdown-button-clicked" onClick={() => { this.selectQuan(8) }}>8</div>
+                              <div className="quantity-dropdown-button-clicked" onClick={() => { selectQuan(8) ; toggleQuan(); }}>8</div>
                             </li>) : (
                               <li className="quantity-dropdown-item">
-                                <div className="quantity-dropdown-button" onClick={() => { this.selectQuan(8) }}>8</div>
+                                <div className="quantity-dropdown-button" onClick={() => { selectQuan(8) ; toggleQuan(); }}>8</div>
                               </li>)}
-                          {(this.state.quantity === 9) ? (
+                          {(selectedQuan === 9) ? (
                             <li className="quantity-dropdown-item">
-                              <div className="quantity-dropdown-button-clicked" onClick={() => { this.selectQuan(9) }}>9</div>
+                              <div className="quantity-dropdown-button-clicked" onClick={() => { selectQuan(9) ; toggleQuan(); }}>9</div>
                             </li>) : (
                               <li className="quantity-dropdown-item">
-                                <div className="quantity-dropdown-button" onClick={() => { this.selectQuan(9) }}>9</div>
+                                <div className="quantity-dropdown-button" onClick={() => { selectQuan(9) ; toggleQuan(); }}>9</div>
                               </li>)}
-                          {(this.state.quantity === 10) ? (
+                          {(selectedQuan === 10) ? (
                             <li className="quantity-dropdown-item">
-                              <div className="quantity-dropdown-button-clicked" onClick={() => { this.selectQuan(10) }}>10</div>
+                              <div className="quantity-dropdown-button-clicked" onClick={() => { selectQuan(10); toggleQuan();  }}>10</div>
                             </li>) : (
                               <li className="quantity-dropdown-item">
-                                <div className="quantity-dropdown-button" onClick={() => { this.selectQuan(10) }}>10</div>
+                                <div className="quantity-dropdown-button" onClick={() => { selectQuan(10); toggleQuan();  }}>10</div>
                               </li>)}
                         </ul>
                       </div>) : (null)}
-                    </div> */}
+                    </div>
                   </div>
                 </div>
               </div>
@@ -254,12 +254,21 @@ class ProductInfo extends React.Component {
 
 const mapStateToProps = state => ({
   data: state.product.info,
-  toggle: state.heartToggle
+  toggle: state.heartToggle,
+  sizeDropdown: state.sizeDropdown,
+  showMessage: state.sizeDropdown.message,
+  selectedSize: state.selectedSize,
+  quanDropdown: state.quanDropdown,
+  selectedQuan: state.selectedQuan
 });
 
 const mapDispatchToProps = dispatch => {
   return {
-    fill: () => dispatch(fill())
+    fill: () => dispatch(fill()),
+    toggleSize: () => dispatch(toggleSize()),
+    selectSize: (size) => dispatch(selectSize(size)),
+    toggleQuan: () => dispatch(toggleQuan()),
+    selectQuan: (quantity) => dispatch(selectQuan(quantity))
   }
 }
 

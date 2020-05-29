@@ -1,8 +1,8 @@
 const productModal = (state = false, action) => {
     switch (action.type) {
-        case 'SHOW':
+        case 'SHOW_MODAL':
             return true
-        case 'HIDE':
+        case 'HIDE_MODAL':
             return false
         default:
             return state
