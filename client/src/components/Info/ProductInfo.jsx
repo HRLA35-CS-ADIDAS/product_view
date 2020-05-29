@@ -105,7 +105,7 @@ class ProductInfo extends React.Component {
                               {size.map((shoeSize) => {
                                 return (
                                   <li className="size-item">
-                                    <div onClick={() => {selectSize(shoeSize); toggleSize();}} className="button-item">
+                                    <div onClick={() => { selectSize(shoeSize); toggleSize(); }} className="button-item">
                                       <b>{shoeSize}</b>
                                     </div>
                                   </li>
@@ -113,7 +113,7 @@ class ProductInfo extends React.Component {
                               })}
 
                             </ul>
-                            {/* {showMessage ? (<div className="please">Please select your size</div>) : (null)} */}
+                            {showMessage ? (<div className="please">Please select your size</div>) : (null)}
 
                           </div>
 
@@ -144,79 +144,79 @@ class ProductInfo extends React.Component {
 
                           {(selectedQuan === 1) ? (
                             <li className="quantity-dropdown-item">
-                              <div className="quantity-dropdown-button-clicked" onClick={() => { selectQuan(1) ; toggleQuan(); }}>1</div>
+                              <div className="quantity-dropdown-button-clicked" onClick={() => { selectQuan(1); toggleQuan(); }}>1</div>
                             </li>) : (
                               <li className="quantity-dropdown-item">
-                                <div className="quantity-dropdown-button" onClick={() => { selectQuan(1) ; toggleQuan(); }}>1</div>
+                                <div className="quantity-dropdown-button" onClick={() => { selectQuan(1); toggleQuan(); }}>1</div>
                               </li>)}
 
                           {(selectedQuan === 2) ? (
                             <li className="quantity-dropdown-item">
-                              <div className="quantity-dropdown-button-clicked" onClick={() => { selectQuan(2) ; toggleQuan(); }}>2</div>
+                              <div className="quantity-dropdown-button-clicked" onClick={() => { selectQuan(2); toggleQuan(); }}>2</div>
                             </li>) : (
                               <li className="quantity-dropdown-item">
-                                <div className="quantity-dropdown-button" onClick={() => { selectQuan(2) ; toggleQuan(); }}>2</div>
+                                <div className="quantity-dropdown-button" onClick={() => { selectQuan(2); toggleQuan(); }}>2</div>
                               </li>)}
 
 
                           {(selectedQuan === 3) ? (
                             <li className="quantity-dropdown-item">
-                              <div className="quantity-dropdown-button-clicked" onClick={() => { selectQuan(3) ; toggleQuan(); }}>3</div>
+                              <div className="quantity-dropdown-button-clicked" onClick={() => { selectQuan(3); toggleQuan(); }}>3</div>
                             </li>) : (
                               <li className="quantity-dropdown-item">
-                                <div className="quantity-dropdown-button" onClick={() => { selectQuan(3) ; toggleQuan(); }}>3</div>
+                                <div className="quantity-dropdown-button" onClick={() => { selectQuan(3); toggleQuan(); }}>3</div>
                               </li>)}
 
                           {(selectedQuan === 4) ? (
                             <li className="quantity-dropdown-item">
-                              <div className="quantity-dropdown-button-clicked" onClick={() => { selectQuan(4) ; toggleQuan(); }}>4</div>
+                              <div className="quantity-dropdown-button-clicked" onClick={() => { selectQuan(4); toggleQuan(); }}>4</div>
                             </li>) : (
                               <li className="quantity-dropdown-item">
-                                <div className="quantity-dropdown-button" onClick={() => { selectQuan(4) ; toggleQuan(); }}>4</div>
+                                <div className="quantity-dropdown-button" onClick={() => { selectQuan(4); toggleQuan(); }}>4</div>
                               </li>)}
 
                           {(selectedQuan === 5) ? (
                             <li className="quantity-dropdown-item">
-                              <div className="quantity-dropdown-button-clicked" onClick={() => { selectQuan(5) ; toggleQuan(); }}>5</div>
+                              <div className="quantity-dropdown-button-clicked" onClick={() => { selectQuan(5); toggleQuan(); }}>5</div>
                             </li>) : (
                               <li className="quantity-dropdown-item">
-                                <div className="quantity-dropdown-button" onClick={() => { selectQuan(5) ; toggleQuan(); }}>5</div>
+                                <div className="quantity-dropdown-button" onClick={() => { selectQuan(5); toggleQuan(); }}>5</div>
                               </li>)}
 
                           {(selectedQuan === 6) ? (
                             <li className="quantity-dropdown-item">
-                              <div className="quantity-dropdown-button-clicked" onClick={() => { selectQuan(6) ; toggleQuan(); }}>6</div>
+                              <div className="quantity-dropdown-button-clicked" onClick={() => { selectQuan(6); toggleQuan(); }}>6</div>
                             </li>) : (
                               <li className="quantity-dropdown-item">
-                                <div className="quantity-dropdown-button" onClick={() => { selectQuan(6) ; toggleQuan(); }}>6</div>
+                                <div className="quantity-dropdown-button" onClick={() => { selectQuan(6); toggleQuan(); }}>6</div>
                               </li>)}
                           {(selectedQuan === 7) ? (
                             <li className="quantity-dropdown-item">
-                              <div className="quantity-dropdown-button-clicked" onClick={() => { selectQuan(7) ; toggleQuan(); }}>7</div>
+                              <div className="quantity-dropdown-button-clicked" onClick={() => { selectQuan(7); toggleQuan(); }}>7</div>
                             </li>) : (
                               <li className="quantity-dropdown-item">
-                                <div className="quantity-dropdown-button" onClick={() => { selectQuan(7) ; toggleQuan(); }}>7</div>
+                                <div className="quantity-dropdown-button" onClick={() => { selectQuan(7); toggleQuan(); }}>7</div>
                               </li>)}
                           {(selectedQuan === 8) ? (
                             <li className="quantity-dropdown-item">
-                              <div className="quantity-dropdown-button-clicked" onClick={() => { selectQuan(8) ; toggleQuan(); }}>8</div>
+                              <div className="quantity-dropdown-button-clicked" onClick={() => { selectQuan(8); toggleQuan(); }}>8</div>
                             </li>) : (
                               <li className="quantity-dropdown-item">
-                                <div className="quantity-dropdown-button" onClick={() => { selectQuan(8) ; toggleQuan(); }}>8</div>
+                                <div className="quantity-dropdown-button" onClick={() => { selectQuan(8); toggleQuan(); }}>8</div>
                               </li>)}
                           {(selectedQuan === 9) ? (
                             <li className="quantity-dropdown-item">
-                              <div className="quantity-dropdown-button-clicked" onClick={() => { selectQuan(9) ; toggleQuan(); }}>9</div>
+                              <div className="quantity-dropdown-button-clicked" onClick={() => { selectQuan(9); toggleQuan(); }}>9</div>
                             </li>) : (
                               <li className="quantity-dropdown-item">
-                                <div className="quantity-dropdown-button" onClick={() => { selectQuan(9) ; toggleQuan(); }}>9</div>
+                                <div className="quantity-dropdown-button" onClick={() => { selectQuan(9); toggleQuan(); }}>9</div>
                               </li>)}
                           {(selectedQuan === 10) ? (
                             <li className="quantity-dropdown-item">
-                              <div className="quantity-dropdown-button-clicked" onClick={() => { selectQuan(10); toggleQuan();  }}>10</div>
+                              <div className="quantity-dropdown-button-clicked" onClick={() => { selectQuan(10); toggleQuan(); }}>10</div>
                             </li>) : (
                               <li className="quantity-dropdown-item">
-                                <div className="quantity-dropdown-button" onClick={() => { selectQuan(10); toggleQuan();  }}>10</div>
+                                <div className="quantity-dropdown-button" onClick={() => { selectQuan(10); toggleQuan(); }}>10</div>
                               </li>)}
                         </ul>
                       </div>) : (null)}
@@ -226,7 +226,7 @@ class ProductInfo extends React.Component {
               </div>
               <div className="bag-container">
                 {/* <BagPopup price={this.props.price} item={this.props.item} openSize={this.openSize} selectedSize={this.state.selectedSize} totalQuantity={this.state.totalQuantity} shoe={this.props.shoe} images={this.props.images} handleBag={this.handleBag} size={this.state.selectedSize} quantity={this.state.quantity} /> */}
-
+                <BagPopup />
                 <div onClick={() => fill()} className="heart-div">
                   <div className="toggle-heart">
                     {toggle ? (<svg className="gl-icon-active" data-auto-id="wishlist-icon" data-di-rand="1585474990403" data-di-res-id="b103962b-ab6a442f">

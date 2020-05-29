@@ -127,6 +127,13 @@ export const selectSize = (size) => {
   };
 };
 
+export const showMessage = (selected) => {
+  return {
+    type: 'SHOW_MESSAGE',
+    payload: selected
+  };
+};
+
 /*
   ========================================
   Quantity Selector

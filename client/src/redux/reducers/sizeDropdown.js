@@ -9,9 +9,11 @@ const sizeDropdown = (state = false, action) => {
         case 'TOGGLE_SIZE':
             return !state
         case 'SHOW_MESSAGE':
-            return {
-                display: true,
-                message: true
+            if(action.payload === null){
+                return {
+                    display: true,
+                    message: true
+                }
             }
         default:
             return state
