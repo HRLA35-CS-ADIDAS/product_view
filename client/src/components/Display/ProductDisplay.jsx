@@ -1,16 +1,16 @@
 import React from 'react';
 import ReactModal from 'react-modal';
 import ImageCarousel from './ImageCarousel.jsx';
-import CompleteLook from './CompleteLook.jsx';
+import CompleteLook from '../Others/CompleteLook.jsx';
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
-import { increaseArrow, decreaseArrow, showDisplayModal, hideDisplayModal } from '../redux/actions/index'
+import { increaseArrow, decreaseArrow, setCount, showDisplayModal, hideDisplayModal, magnifyOut } from '../../redux/actions/index';
 
 class ProductDisplay extends React.Component {
 
 
     render() {
-        const { images, count, increment, decrement, modalStatus, show, hide } = this.props;
+        const { images, count, increment, decrement, modalStatus, show, hide, setCount, zoomOut } = this.props;
+
 
         if (images === undefined) {
             return (
@@ -22,8 +22,6 @@ class ProductDisplay extends React.Component {
             <div className="img-wrapper">
                 <div className="shoe-element-container">
                     <div className="mainImageBox">
-                        {console.log(count)}
-                        {console.log(modalStatus)}
                         <img className="large-product" src={images[count]} onClick={show} />
 
                         <div className="left-arrow" onClick={() => decrement(this.props)}>
@@ -62,8 +60,7 @@ class ProductDisplay extends React.Component {
                             {images.map((sideImg) => {
                                 return (
                                     <div className="side-image-box">
-                                        {/* <img className="side-image" src={sideImg} onClick={() => { this.openThumbnail(this.props.images.indexOf(sideImg)) }} />  */}
-                                        <img className="side-image" src={sideImg} />
+                                        <img className="side-image" src={sideImg} onClick={() => setCount(images.indexOf(sideImg))} />
                                     </div>)
                             })}
                         </div>
@@ -72,12 +69,11 @@ class ProductDisplay extends React.Component {
                 </div >
 
                 <ReactModal isOpen={modalStatus} className="modalImage" overlayClassName="Overlay-popup" onRequestClose={hide}>
-                    <button className="close-modal1" onClick={hide}>
+                    <button className="close-modal1" onClick={() => {hide(); zoomOut();}}>
                         <svg className="close-icon" data-di-res-id="afd85625-1c771244" data-di-rand="1585384319810">
                             <svg id="close" viewBox="0 0 18 24"><path d="M17 4l-8 8 8 8M1 4l8 8-8 8" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="2"></path></svg>
                         </svg>
                     </button>
-                    {/* <ImageCarousel closeButton={this.closeModal} images={this.props.images} image={this.state.image} handlePrev={this.handlePrev} handleNext={this.handleNext} /> */}
                     <ImageCarousel hide={hide} images={images} />
                 </ReactModal>
 
@@ -101,8 +97,10 @@ const mapDispatchToProps = dispatch => {
     return {
         increment: (ownProps) => dispatch(increaseArrow(ownProps.images)),
         decrement: (ownProps) => dispatch(decreaseArrow(ownProps.images)),
+        setCount: (num) => dispatch(setCount(num)),
         show: () => dispatch(showDisplayModal()),
-        hide: () => dispatch(hideDisplayModal())
+        hide: () => dispatch(hideDisplayModal()),
+        zoomOut: () => dispatch(magnifyOut())
     }
 }
 

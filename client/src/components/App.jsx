@@ -2,8 +2,8 @@ import React from 'react';
 import axios from 'axios';
 import { connect } from 'react-redux';
 import { fetchData } from '../redux/actions/index.js'
-import ProductDisplay from './ProductDisplay.jsx';
-import ProductInfo from './ProductInfo.jsx'
+import ProductDisplay from './Display/ProductDisplay.jsx';
+import ProductInfo from './Info/ProductInfo.jsx'
 
 class App extends React.Component {
 
@@ -59,8 +59,7 @@ class App extends React.Component {
                     <div className="background" />
                     <div className="inner-product-container">
                         <ProductDisplay shoe={data} images={carousel_images} matching_items={matching_items} />
-                        {/* <ProductDisplay addPrice={this.addPrice} shoe={this.state.currentShoe} images={this.state.currentShoe.carousel_images} matching_items={this.state.currentShoe.matching_items} /> */}
-                        {/* <ProductInfo price={this.state.price} item={this.state.item} shoe={this.state.currentShoe} images={this.state.currentShoe.carousel_images} changeImage={this.changeShoe} /> */}
+                        <ProductInfo/>
                     </div>
                 </div>
             </div>
@@ -112,13 +111,13 @@ export default connect(mapStateToProps)(App);
 //     }
 
 //     changeShoe(newImg) {
-//         for (var key in this.state.products) {
-//             if (this.state.products[key].carousel_images[0] === newImg) {
-//                 this.setState({
-//                     currentShoe: this.state.products[key]
-//                 })
-//             }
-//         }
+        // for (var key in this.state.products) {
+        //     if (this.state.products[key].carousel_images[0] === newImg) {
+        //         this.setState({
+        //             currentShoe: this.state.products[key]
+        //         })
+        //     }
+        // }
 //     }
 
 //     addPrice(price) {

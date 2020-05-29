@@ -3,6 +3,7 @@ import axios from 'axios';
 export const FETCH_PRODUCTS_BEGIN = 'FETCH_PRODUCTS_BEGIN';
 export const FETCH_PRODUCTS_SUCCESS = 'FETCH_PRODUCTS_SUCCESS';
 export const FETCH_PRODUCTS_FAILURE = 'FETCH_PRODUCTS_FAILURE';
+export const CHANGE_PRODUCT = 'CHANGE_PRODUCT';
 
 /*
   ========================================
@@ -15,7 +16,7 @@ export const fetchData = () => {
     dispatch(fetchProductsBegin)
     axios.get('/products')
       .then((response) => {
-        const data = response.data[(Math.floor(response.data.length * Math.random()))]
+        const data = response.data
         dispatch(fetchProductsSuccess(data))
       })
       .catch(error => {
@@ -39,6 +40,11 @@ export const fetchProductsFailure = error => ({
   payload: { error }
 });
 
+export const changeProduct = (allProducts, target) => ({
+  type: CHANGE_PRODUCT,
+  payload: { allProducts, target }
+});
+
 /*
   ========================================
   Next and previous arrows
@@ -59,6 +65,13 @@ export const decreaseArrow = (images) => {
   }
 }
 
+export const setCount = (index) => {
+  return {
+    type: 'SET',
+    payload: index
+  }
+}
+
 /*
   ========================================
   Product Display Modal
@@ -74,6 +87,24 @@ export const showDisplayModal = () => {
 export const hideDisplayModal = () => {
   return {
     type: 'HIDE'
+  };
+};
+
+/*
+  ========================================
+  Magnify
+  ========================================
+*/
+
+export const magnifyIn = () => {
+  return {
+    type: 'IN'
+  };
+};
+
+export const magnifyOut = () => {
+  return {
+    type: 'OUT'
   };
 };
 

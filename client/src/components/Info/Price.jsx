@@ -1,12 +1,6 @@
 import React from 'react';
 
 class Price extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-        }
-    }
-
     render() {
         if (this.props.oldPrice === null) {
             return (

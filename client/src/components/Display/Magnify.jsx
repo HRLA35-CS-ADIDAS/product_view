@@ -2,11 +2,7 @@ import React from 'react';
 import ReactMagnify from 'react-image-magnify';
 
 class Magnify extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-        }
-    }
+
 
     render() {
 
