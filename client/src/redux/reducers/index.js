@@ -9,6 +9,9 @@ import quanDropdown from './quanDropdown.js';
 import selectedQuan from './selectedQuan.js';
 import bagModal from './bagModal.js';
 import bagInfo from './bagInfo.js';
+import underlineContainer from './underlineContainer.js';
+import completeDrop from './completeDrop.js';
+import matchingItem from './matchingItem.js';
 import { combineReducers } from 'redux';
 
 const allReducers = combineReducers({
@@ -22,7 +25,10 @@ const allReducers = combineReducers({
     quanDropdown,
     selectedQuan,
     bagInfo,
-    bagModal
+    bagModal,
+    underlineContainer,
+    completeDrop,
+    matchingItem
 });
 
 export default allReducers;

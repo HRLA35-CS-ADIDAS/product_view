@@ -1,13 +1,16 @@
 import React from 'react';
 import ReactMagnify from 'react-image-magnify';
+import { magnifyOut } from '../../redux/actions/index.js';
+import { connect } from 'react-redux';
 
 class Magnify extends React.Component {
 
-
     render() {
 
+        const { zoomOut } = this.props;
+
         return (
-            <div className="fluid">
+            <div className="fluid" onClick={() => zoomOut()}>
                 <ReactMagnify {...{
                     smallImage: {
                         src: this.props.image,
@@ -27,5 +30,14 @@ class Magnify extends React.Component {
         )
     }
 }
+const mapStateToProps = state => ({
+});
 
-export default Magnify;
+
+const mapDispatchToProps = dispatch => {
+    return {
+        zoomOut: () => dispatch(magnifyOut())
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Magnify);

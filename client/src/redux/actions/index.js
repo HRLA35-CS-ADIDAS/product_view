@@ -190,3 +190,29 @@ export const updateBag = (size, quantity) => {
     payload: { size, quantity }
   };
 };
+
+/*
+  ========================================
+  Complete Look
+  ========================================
+*/
+
+export const selectItem = (item) => {
+  return {
+    type: 'SELECT_ITEM',
+    payload: item
+  };
+};
+
+export const underlineItem = (item) => {
+  return {
+    type: 'UNDERLINE',
+    payload: item
+  };
+};
+
+export const handleDrop = () => {
+  return {
+    type: 'DROP_COMPLETE'
+  };
+};

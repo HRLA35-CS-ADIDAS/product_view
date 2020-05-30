@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import axios from 'axios';
 import { connect } from 'react-redux';
 import { fetchData } from '../redux/actions/index.js'
@@ -26,7 +26,7 @@ class App extends React.Component {
         }
 
         return (
-            <div>
+            <Fragment>
                 <div className="breadcrumb1">
                     <div className="breadcrumb2">
                         <div className="breadcrumb3">
@@ -62,7 +62,7 @@ class App extends React.Component {
                         <ProductInfo/>
                     </div>
                 </div>
-            </div>
+            </Fragment>
         )
     }
 }

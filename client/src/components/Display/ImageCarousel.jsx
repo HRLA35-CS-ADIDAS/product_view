@@ -14,8 +14,8 @@ class ImageCarousel extends React.Component {
                 <div className="carousel">
                     <ul className="carousel-viewport">
                         <li id="carousel__slide1" tabIndex="0" className="carousel__slide">
-                            <div onClick={() => zoomIn()}>
-                                {magnify ? (<Magnify image={images[0]} onClick={() => zoomOut()} />
+                            <div>
+                                {magnify ? (<Magnify image={images[0]} />
                                 ) : (
                                         <div className="fluid1">
                                             <div className="fluid__image-container">
@@ -35,8 +35,8 @@ class ImageCarousel extends React.Component {
                         </li>
 
                         <li id="carousel__slide2" tabIndex="0" className="carousel__slide">
-                            <div onClick={() => zoomIn()}>
-                                {magnify ? (<Magnify image={images[1]} onClick={() => zoomOut()} />
+                            <div>
+                                {magnify ? (<Magnify image={images[1]} />
                                 ) : (
                                         <div className="fluid1">
                                             <div className="fluid__image-container">
@@ -62,8 +62,8 @@ class ImageCarousel extends React.Component {
                         </li>
 
                         <li id="carousel__slide3" tabIndex="0" className="carousel__slide">
-                            <div onClick={() => zoomIn()}>
-                                {magnify ? (<Magnify image={images[2]} onClick={() => zoomOut()} />
+                            <div>
+                                {magnify ? (<Magnify image={images[2]} />
                                 ) : (
                                         <div className="fluid1">
                                             <div className="fluid__image-container">
@@ -88,8 +88,8 @@ class ImageCarousel extends React.Component {
                             </div>
                         </li>
                         <li id="carousel__slide4" tabIndex="0" className="carousel__slide">
-                            <div onClick={() => zoomIn()}>
-                                {magnify ? (<Magnify image={images[3]} onClick={() => zoomOut()} />
+                            <div>
+                                {magnify ? (<Magnify image={images[3]}/>
                                 ) : (
                                         <div className="fluid1">
                                             <div className="fluid__image-container">

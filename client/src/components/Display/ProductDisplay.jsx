@@ -9,7 +9,7 @@ class ProductDisplay extends React.Component {
 
 
     render() {
-        const { images, count, increment, decrement, modalStatus, show, hide, setCount, zoomOut } = this.props;
+        const { images, count, increment, decrement, modalStatus, show, hide, setCount, zoomOut, matching_items } = this.props;
 
 
         if (images === undefined) {
@@ -77,9 +77,9 @@ class ProductDisplay extends React.Component {
                     <ImageCarousel hide={hide} images={images} />
                 </ReactModal>
 
-                {/* {(this.props.matching_items === null) ? (null) : (
-                    <CompleteLook addPrice={this.props.addPrice} matching_items={this.props.matching_items} />
-                )} */}
+                {(matching_items === null) ? (null) : (
+                    <CompleteLook />
+                )}
 
 
             </div >

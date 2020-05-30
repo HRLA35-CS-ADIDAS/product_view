@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import ReactModal from 'react-modal';
 import { connect } from 'react-redux';
 import { showMessage, showBagModal, hideBagModal, updateBag } from '../../redux/actions/index';
@@ -17,7 +17,6 @@ const customStyles = {
 
 class BagPopup extends React.Component {
 
-
     render() {
         const { showMessage, selectedSize, bagModal, show, hide, selectedQuan, update } = this.props;
         const { carousel_images, name, current_price, available_colors } = this.props.data;
@@ -30,13 +29,15 @@ class BagPopup extends React.Component {
         }
 
         return (
-            <div className="bag-button" onClick={() => {showMessage(selectedSize); show(selectedSize); update(selectedSize, selectedQuan);}}>
+            <Fragment>
+            <button className="bag-button" onClick={()=> {showMessage(selectedSize); show(selectedSize); update(selectedSize, selectedQuan);}}>
                 <span className="before-button"></span>
                 <span className="bag-text">ADD TO BAG</span>
                 <svg className="gl-icon-gl-cta__icon" data-di-res-id="6361accf-c33aeebb" data-di-rand="1585359780189">
                     <svg id="arrow-right-long" viewBox="0 0 24 24"><path d="M17.59 7l5 5-5 5M0 12h22" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="2"></path></svg>
                 </svg>
                 <span className="after-button"></span>
+            </button>
                 <ReactModal
                     isOpen={bagModal}
                     style={customStyles}
@@ -145,7 +146,7 @@ class BagPopup extends React.Component {
                     </div>
 
                 </ReactModal>
-            </div>
+                </Fragment>
         )
     }
 }
