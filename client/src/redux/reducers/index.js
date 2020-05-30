@@ -7,6 +7,8 @@ import sizeDropdown from './sizeDropdown.js';
 import selectedSize from './selectedSize.js';
 import quanDropdown from './quanDropdown.js';
 import selectedQuan from './selectedQuan.js';
+import bagModal from './bagModal.js';
+import bagInfo from './bagInfo.js';
 import { combineReducers } from 'redux';
 
 const allReducers = combineReducers({
@@ -18,7 +20,9 @@ const allReducers = combineReducers({
     sizeDropdown,
     selectedSize,
     quanDropdown,
-    selectedQuan
+    selectedQuan,
+    bagInfo,
+    bagModal
 });
 
 export default allReducers;

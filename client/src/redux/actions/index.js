@@ -164,3 +164,29 @@ export const fill = () => {
     type: 'TOGGLE_HEART'
   };
 };
+
+/*
+  ========================================
+  Bag Modal
+  ========================================
+*/
+
+export const showBagModal = (selected) => {
+  return {
+    type: 'SHOW_BAG',
+    payload: selected
+  };
+};
+
+export const hideBagModal = () => {
+  return {
+    type: 'HIDE_BAG'
+  };
+};
+
+export const updateBag = (size, quantity) => {
+  return {
+    type: 'ADD_BAG',
+    payload: { size, quantity }
+  };
+};
