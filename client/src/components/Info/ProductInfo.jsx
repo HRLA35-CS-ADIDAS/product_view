@@ -257,7 +257,7 @@ const mapStateToProps = state => ({
   toggle: state.heartToggle,
   sizeDropdown: state.sizeDropdown,
   showMessage: state.sizeDropdown.message,
-  selectedSize: state.selectedSize,
+  selectedSize: state.selectedSize.original,
   quanDropdown: state.quanDropdown,
   selectedQuan: state.selectedQuan
 });

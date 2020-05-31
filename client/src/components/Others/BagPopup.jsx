@@ -154,7 +154,7 @@ const mapStateToProps = state => ({
     data: state.product.info,
     bagModal: state.bagModal,
     bagInfo: state.bagInfo,
-    selectedSize: state.selectedSize,
+    selectedSize: state.selectedSize.original,
     selectedQuan: state.selectedQuan
   });
   

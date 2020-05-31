@@ -123,7 +123,10 @@ export const toggleSize = () => {
 export const selectSize = (size) => {
   return {
     type: 'SELECT_SIZE',
-    payload: size
+    payload: {
+      original: size,
+      complete: null
+    }
   };
 };
 
@@ -214,5 +217,20 @@ export const underlineItem = (item) => {
 export const handleDrop = () => {
   return {
     type: 'DROP_COMPLETE'
+  };
+};
+
+export const openCompleteSize = () => {
+  return {
+    type: 'OPEN_COMPLETE_SIZE'
+  };
+};
+
+export const selectCompleteSize = (size) => {
+  return {
+    type: 'SELECT_SIZE',
+    payload: {
+      complete: size
+    }
   };
 };

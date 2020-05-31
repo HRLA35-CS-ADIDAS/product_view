@@ -12,6 +12,7 @@ import bagInfo from './bagInfo.js';
 import underlineContainer from './underlineContainer.js';
 import completeDrop from './completeDrop.js';
 import matchingItem from './matchingItem.js';
+import completeSize from './completeSize.js';
 import { combineReducers } from 'redux';
 
 const allReducers = combineReducers({
@@ -28,7 +29,8 @@ const allReducers = combineReducers({
     bagModal,
     underlineContainer,
     completeDrop,
-    matchingItem
+    matchingItem,
+    completeSize
 });
 
 export default allReducers;
