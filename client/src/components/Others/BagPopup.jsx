@@ -98,11 +98,11 @@ class BagPopup extends React.Component {
                                                 Total Product Cost:
                                                 {(selectedSize !== null) ?
                                                     (<div className="amount">
-                                                        ${(current_price * (totalQuan-quantity)) + (price * quantity)}
+                                                        ${(current_price * (totalQuan-quantity)) + (price)}
                                                     </div>)
                                                     :
                                                     ((<div className="amount">
-                                                        ${(price * quantity)}
+                                                        ${(price)}
                                                     </div>))}
                                             </div>
                                             <div className="price-row">
@@ -119,11 +119,11 @@ class BagPopup extends React.Component {
                                                 <h5 className="amount2">
                                                 {(selectedSize !== null) ?
                                                     (<div className="amount">
-                                                        ${(current_price * (totalQuan-quantity)) + (price * quantity)}
+                                                        ${(current_price * (totalQuan-quantity)) + (price)}
                                                     </div>)
                                                     :
                                                     ((<div className="amount">
-                                                        ${(price * quantity)}
+                                                        ${(price)}
                                                     </div>))}
                                                 </h5>
                                             </h5>
