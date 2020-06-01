@@ -13,6 +13,7 @@ import underlineContainer from './underlineContainer.js';
 import completeDrop from './completeDrop.js';
 import matchingItem from './matchingItem.js';
 import completeSize from './completeSize.js';
+import completeItem from './completeItem.js';
 import { combineReducers } from 'redux';
 
 const allReducers = combineReducers({
@@ -30,7 +31,8 @@ const allReducers = combineReducers({
     underlineContainer,
     completeDrop,
     matchingItem,
-    completeSize
+    completeSize,
+    completeItem
 });
 
 export default allReducers;

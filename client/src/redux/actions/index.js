@@ -226,11 +226,28 @@ export const openCompleteSize = () => {
   };
 };
 
+export const openError = (selected) => {
+  return {
+    type: 'NO_SIZE_SELECTED',
+    payload: selected
+  };
+};
+
 export const selectCompleteSize = (size) => {
   return {
     type: 'SELECT_SIZE',
     payload: {
       complete: size
+    }
+  };
+};
+
+export const addCompleteItem = (price, quantity) => {
+  return {
+    type: 'ADD_COMPLETE_ITEM',
+    payload: {
+      price: price,
+      quantity: quantity
     }
   };
 };

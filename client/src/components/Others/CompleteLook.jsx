@@ -1,14 +1,20 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { selectItem, underlineItem, handleDrop, updateBag, showBagModal, openCompleteSize, selectCompleteSize } from '../../redux/actions/index.js';
+import { selectItem, underlineItem, handleDrop, showBagModal, openCompleteSize, selectCompleteSize, addCompleteItem, openError, updateBag } from '../../redux/actions/index.js';
 
 class CompleteLook extends React.Component {
 
     render() {
 
-        const { selectItem, underlineItem, handleDrop, underlineContainer, dropDown, update, show, completeSize, openSize, selectSize, selectedSize } = this.props;
+        const { selectItem, underlineItem, handleDrop, underlineContainer, dropDown, addComplete, show, completeSize, openSize, selectSize, selectedSize, openError, update } = this.props;
         const { matching_items } = this.props.data;
         const { name, price, size, image } = this.props.matchingItem;
+
+        const runUpdate = () => {
+            if (selectedSize !== null){
+                update('all', 'clear')
+            }
+        }
 
         return (
             <div className="complete-div">
@@ -106,7 +112,7 @@ class CompleteLook extends React.Component {
 
                                     </div>
 
-                                    <div onClick={() => {show('open'); update(selectedSize, 1);}} className="bag-button">
+                                    <div onClick={() => {show(selectedSize); addComplete(price, selectedSize); openError(selectedSize); runUpdate()}} className="bag-button">
                                         <span className="before-button"></span>
                                         <span className="bag-text">ADD TO BAG</span>
                                         <svg className="gl-icon-gl-cta__icon" data-di-res-id="6361accf-c33aeebb" data-di-rand="1585359780189">
@@ -140,10 +146,12 @@ const mapStateToProps = state => ({
         selectItem: (item) => dispatch(selectItem(item)),
         underlineItem: (item) => dispatch(underlineItem(item)),
         handleDrop: () => dispatch(handleDrop()),
-        update: (size, quantity) => dispatch(updateBag(size, quantity)),
         show: (selected) => dispatch(showBagModal(selected)),
         openSize: () => dispatch(openCompleteSize()),
-        selectSize: (size) => dispatch(selectCompleteSize(size))
+        selectSize: (size) => dispatch(selectCompleteSize(size)),
+        addComplete: (price, quantity) => dispatch(addCompleteItem(price, quantity)),
+        openError: (selected) => dispatch(openError(selected)),
+        update: (size, quantity) => dispatch(updateBag(size, quantity))
     }
   }
 

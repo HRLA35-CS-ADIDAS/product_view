@@ -1,17 +1,23 @@
-const initalState = {
+const initialState = {
     totalSize: null,
-    totalQuan: null
+    totalQuan: 0
 }
 
-const bagInfo = (state = initalState, action) => {
+const bagInfo = (state = initialState, action) => {
     switch (action.type) {
         case 'ADD_BAG':
-            if (state.totalSize === null) {
+            if (state.totalSize === null && action.payload.size !== 'all' && action.payload.quantity !== 'clear') {
                 return {
                     totalSize: action.payload.size,
                     totalQuan: action.payload.quantity
                 }
-            } else {
+            } if (action.payload.size === 'all' && action.payload.quantity === 'clear'){
+                return {
+                    totalSize: 'not null',
+                    totalQuan: state.totalQuan + 1   
+                }
+            }
+            else {
                 return {
                     totalSize: action.payload.size,
                     totalQuan: state.totalQuan + action.payload.quantity

@@ -21,6 +21,7 @@ class BagPopup extends React.Component {
         const { showMessage, selectedSize, bagModal, show, hide, selectedQuan, update } = this.props;
         const { carousel_images, name, current_price, available_colors } = this.props.data;
         const { totalQuan } = this.props.bagInfo;
+        const { price, quantity } = this.props.completeItem;
 
         if (carousel_images === undefined) {
             return (
@@ -30,14 +31,14 @@ class BagPopup extends React.Component {
 
         return (
             <Fragment>
-            <button className="bag-button" onClick={()=> {showMessage(selectedSize); show(selectedSize); update(selectedSize, selectedQuan);}}>
-                <span className="before-button"></span>
-                <span className="bag-text">ADD TO BAG</span>
-                <svg className="gl-icon-gl-cta__icon" data-di-res-id="6361accf-c33aeebb" data-di-rand="1585359780189">
-                    <svg id="arrow-right-long" viewBox="0 0 24 24"><path d="M17.59 7l5 5-5 5M0 12h22" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="2"></path></svg>
-                </svg>
-                <span className="after-button"></span>
-            </button>
+                <button className="bag-button" onClick={() => { showMessage(selectedSize); show(selectedSize); update(selectedSize, selectedQuan); }}>
+                    <span className="before-button"></span>
+                    <span className="bag-text">ADD TO BAG</span>
+                    <svg className="gl-icon-gl-cta__icon" data-di-res-id="6361accf-c33aeebb" data-di-rand="1585359780189">
+                        <svg id="arrow-right-long" viewBox="0 0 24 24"><path d="M17.59 7l5 5-5 5M0 12h22" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="2"></path></svg>
+                    </svg>
+                    <span className="after-button"></span>
+                </button>
                 <ReactModal
                     isOpen={bagModal}
                     style={customStyles}
@@ -95,9 +96,14 @@ class BagPopup extends React.Component {
                                         <div className="price-rows">
                                             <div className="price-row">
                                                 Total Product Cost:
-                                                <div className="amount">
-                                                    ${current_price * totalQuan}
-                                                </div>
+                                                {(selectedSize !== null) ?
+                                                    (<div className="amount">
+                                                        ${(current_price * (totalQuan-quantity)) + (price * quantity)}
+                                                    </div>)
+                                                    :
+                                                    ((<div className="amount">
+                                                        ${(price * quantity)}
+                                                    </div>))}
                                             </div>
                                             <div className="price-row">
                                                 Total Delivery Cost:
@@ -111,7 +117,14 @@ class BagPopup extends React.Component {
                                             <h5 className="price-row2">
                                                 Total:
                                                 <h5 className="amount2">
-                                                    ${current_price * totalQuan}
+                                                {(selectedSize !== null) ?
+                                                    (<div className="amount">
+                                                        ${(current_price * (totalQuan-quantity)) + (price * quantity)}
+                                                    </div>)
+                                                    :
+                                                    ((<div className="amount">
+                                                        ${(price * quantity)}
+                                                    </div>))}
                                                 </h5>
                                             </h5>
                                             <div className="installments">
@@ -146,7 +159,7 @@ class BagPopup extends React.Component {
                     </div>
 
                 </ReactModal>
-                </Fragment>
+            </Fragment>
         )
     }
 }
@@ -155,19 +168,20 @@ const mapStateToProps = state => ({
     bagModal: state.bagModal,
     bagInfo: state.bagInfo,
     selectedSize: state.selectedSize.original,
-    selectedQuan: state.selectedQuan
-  });
-  
-  const mapDispatchToProps = dispatch => {
+    selectedQuan: state.selectedQuan,
+    completeItem: state.completeItem
+});
+
+const mapDispatchToProps = dispatch => {
     return {
         showMessage: (selected) => dispatch(showMessage(selected)),
         show: (selected) => dispatch(showBagModal(selected)),
         update: (size, quantity) => dispatch(updateBag(size, quantity)),
         hide: () => dispatch(hideBagModal())
     }
-  }
-  
-  export default connect(mapStateToProps, mapDispatchToProps)(BagPopup);
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(BagPopup);
 
 // class BagPopup extends React.Component {
 //     constructor(props) {
