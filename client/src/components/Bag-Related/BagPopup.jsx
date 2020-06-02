@@ -35,7 +35,7 @@ class BagPopup extends React.Component {
                     <span className="before-button"></span>
                     <span className="bag-text">ADD TO BAG</span>
                     <svg className="gl-icon-gl-cta__icon" data-di-res-id="6361accf-c33aeebb" data-di-rand="1585359780189">
-                        <svg id="arrow-right-long" viewBox="0 0 24 24"><path d="M17.59 7l5 5-5 5M0 12h22" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="2"></path></svg>
+                        <svg id="arrow-right-long" viewBox="0 0 24 24"><path d="M17.59 7l5 5-5 5M0 12h22" fill="none" stroke="currentColor" strokeMiterlimit="10" strokeWidth="2"></path></svg>
                     </svg>
                     <span className="after-button"></span>
                 </button>
@@ -47,7 +47,7 @@ class BagPopup extends React.Component {
                 >
                     <button className="close-modal" onClick={() => hide()}>
                         <svg className="close-icon" data-di-res-id="afd85625-1c771244" data-di-rand="1585384319810">
-                            <svg id="close" viewBox="0 0 18 24"><path d="M17 4l-8 8 8 8M1 4l8 8-8 8" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="2"></path></svg>
+                            <svg id="close" viewBox="0 0 18 24"><path d="M17 4l-8 8 8 8M1 4l8 8-8 8" fill="none" stroke="currentColor" strokeMiterlimit="10" strokeWidth="2"></path></svg>
                         </svg>
                     </button>
                     <div className="bag-modal">
@@ -138,7 +138,7 @@ class BagPopup extends React.Component {
                                                 <span className="before-button"></span>
                                                 <span className="bag-text">VIEW BAG</span>
                                                 <svg className="gl-icon-gl-cta__icon" data-di-res-id="6361accf-c33aeebb" data-di-rand="1585359780189">
-                                                    <svg id="arrow-right-long" viewBox="0 0 24 24"><path d="M17.59 7l5 5-5 5M0 12h22" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="2"></path></svg>
+                                                    <svg id="arrow-right-long" viewBox="0 0 24 24"><path d="M17.59 7l5 5-5 5M0 12h22" fill="none" stroke="currentColor" strokeMiterlimit="10" strokeWidth="2"></path></svg>
                                                 </svg>
                                                 <span className="after-button"></span>
                                             </div>
@@ -146,7 +146,7 @@ class BagPopup extends React.Component {
                                             <div className="view-bag-button2">
                                                 <span className="bag-text">GO TO CHECKOUT</span>
                                                 <svg className="gl-icon-gl-cta__icon" data-di-res-id="6361accf-c33aeebb" data-di-rand="1585359780189">
-                                                    <svg id="arrow-right-long" viewBox="0 0 24 24"><path d="M17.59 7l5 5-5 5M0 12h22" fill="none" stroke="currentColor" color="black" stroke-miterlimit="10" stroke-width="2"></path></svg>
+                                                    <svg id="arrow-right-long" viewBox="0 0 24 24"><path d="M17.59 7l5 5-5 5M0 12h22" fill="none" stroke="currentColor" color="black" strokeMiterlimit="10" strokeWidth="2"></path></svg>
                                                 </svg>
                                             </div>
 

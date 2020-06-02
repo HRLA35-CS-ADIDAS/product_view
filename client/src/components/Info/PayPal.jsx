@@ -41,7 +41,7 @@ class PayPal extends React.Component {
 
                     <div className="icon-wrapper2">
                       <svg className="usp-checkmark" data-di-rand="1585359780190">
-                        <svg id="usp" viewBox="0 0 17 19"><path fill="none" stroke="currentColor" stroke-linecap="square" stroke-miterlimit="10" d="M1.5 10.5l4 4 10-10"></path></svg>
+                        <svg id="usp" viewBox="0 0 17 19"><path fill="none" stroke="currentColor" strokeLinecap="square" strokeMiterlimit="10" d="M1.5 10.5l4 4 10-10"></path></svg>
                       </svg></div>
                     <div onClick={this.openModal} className="callout-content2">
                       <div className="promo-link2">
@@ -58,7 +58,7 @@ class PayPal extends React.Component {
                 >
                     <button className="close-modal" onClick={this.closeModal}>
                         <svg className="close-icon" data-di-res-id="afd85625-1c771244" data-di-rand="1585384319810">
-                            <svg id="close" viewBox="0 0 18 24"><path d="M17 4l-8 8 8 8M1 4l8 8-8 8" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="2"></path></svg>
+                            <svg id="close" viewBox="0 0 18 24"><path d="M17 4l-8 8 8 8M1 4l8 8-8 8" fill="none" stroke="currentColor" strokeMiterlimit="10" strokeWidth="2"></path></svg>
                         </svg>
                     </button>
                     <div>

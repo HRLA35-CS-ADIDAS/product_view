@@ -39,7 +39,7 @@ class FreeShipping extends React.Component {
                     <div className="promo-callout">
                         <div className="icon-wrapper">
                             <svg className="car1" data-di-rand="1585359780190">
-                                <svg id="usp-delivery" viewBox="0 0 19 19"><g fill="none" stroke="currentColor" stroke-miterlimit="10"><path d="M13.42 13.5H9.5"></path><path stroke-linecap="square" d="M4.5 5.5h10l4 3v5h-2M6.5 13.5h-2m0-6h-4"></path><circle cx="8" cy="13" r="1.5"></circle><circle cx="15" cy="13" r="1.5"></circle><path stroke-linecap="square" d="M1.5 9.5h3m-2 2h2"></path></g></svg>
+                                <svg id="usp-delivery" viewBox="0 0 19 19"><g fill="none" stroke="currentColor" strokeMiterlimit="10"><path d="M13.42 13.5H9.5"></path><path strokeLinecap="square" d="M4.5 5.5h10l4 3v5h-2M6.5 13.5h-2m0-6h-4"></path><circle cx="8" cy="13" r="1.5"></circle><circle cx="15" cy="13" r="1.5"></circle><path strokeLinecap="square" d="M1.5 9.5h3m-2 2h2"></path></g></svg>
                             </svg>
                         </div>
                         <div onClick={this.openModal} className="callout-content">
@@ -61,7 +61,7 @@ class FreeShipping extends React.Component {
                 >
                     <button className="close-modal" onClick={this.closeModal}>
                         <svg className="close-icon" data-di-res-id="afd85625-1c771244" data-di-rand="1585384319810">
-                            <svg id="close" viewBox="0 0 18 24"><path d="M17 4l-8 8 8 8M1 4l8 8-8 8" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="2"></path></svg>
+                            <svg id="close" viewBox="0 0 18 24"><path d="M17 4l-8 8 8 8M1 4l8 8-8 8" fill="none" stroke="currentColor" strokeMiterlimit="10" strokeWidth="2"></path></svg>
                         </svg>
                     </button>
                     <div>

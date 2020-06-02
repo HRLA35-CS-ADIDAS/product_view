@@ -71,7 +71,7 @@ class ProductDisplay extends React.Component {
                 <ReactModal isOpen={modalStatus} className="modalImage" overlayClassName="Overlay-popup" onRequestClose={hide}>
                     <button className="close-modal1" onClick={() => {hide(); zoomOut();}}>
                         <svg className="close-icon" data-di-res-id="afd85625-1c771244" data-di-rand="1585384319810">
-                            <svg id="close" viewBox="0 0 18 24"><path d="M17 4l-8 8 8 8M1 4l8 8-8 8" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="2"></path></svg>
+                            <svg id="close" viewBox="0 0 18 24"><path d="M17 4l-8 8 8 8M1 4l8 8-8 8" fill="none" stroke="currentColor" strokeMiterlimit="10" strokeWidth="2"></path></svg>
                         </svg>
                     </button>
                     <ImageCarousel hide={hide} images={images} />

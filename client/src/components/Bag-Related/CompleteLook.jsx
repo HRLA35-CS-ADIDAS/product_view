@@ -81,9 +81,9 @@ class CompleteLook extends React.Component {
                                             </span>
 
                                             {completeSize ? (<svg className="open-dropdown" data-di-res-id="3d102a33-51e27117" data-di-rand="1585301057992">
-                                                <svg id="dropdown" viewBox="0 0 16 24"><path fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="2" d="M1.5 9L8 15.5 14.5 9"></path></svg>
+                                                <svg id="dropdown" viewBox="0 0 16 24"><path fill="none" stroke="currentColor" strokeMiterlimit="10" strokeWidth="2" d="M1.5 9L8 15.5 14.5 9"></path></svg>
                                             </svg>) : (<svg className="gl-icon-gl-custom-dropdown__select-icon" data-di-res-id="3d102a33-51e27117" data-di-rand="1585301057992">
-                                                <svg id="dropdown" viewBox="0 0 16 24"><path fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="2" d="M1.5 9L8 15.5 14.5 9"></path></svg>
+                                                <svg id="dropdown" viewBox="0 0 16 24"><path fill="none" stroke="currentColor" strokeMiterlimit="10" strokeWidth="2" d="M1.5 9L8 15.5 14.5 9"></path></svg>
                                             </svg>)}
 
                                         </button>
@@ -116,7 +116,7 @@ class CompleteLook extends React.Component {
                                         <span className="before-button"></span>
                                         <span className="bag-text">ADD TO BAG</span>
                                         <svg className="gl-icon-gl-cta__icon" data-di-res-id="6361accf-c33aeebb" data-di-rand="1585359780189">
-                                            <svg id="arrow-right-long" viewBox="0 0 24 24"><path d="M17.59 7l5 5-5 5M0 12h22" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="2"></path></svg>
+                                            <svg id="arrow-right-long" viewBox="0 0 24 24"><path d="M17.59 7l5 5-5 5M0 12h22" fill="none" stroke="currentColor" strokeMiterlimit="10" strokeWidth="2"></path></svg>
                                         </svg>
                                         <span className="after-button"></span>
                                     </div>
