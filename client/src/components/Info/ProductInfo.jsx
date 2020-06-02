@@ -5,7 +5,7 @@ import LearnMore from './LearnMore.jsx';
 import FreeShipping from './FreeShipping.jsx';
 import PayPal from './PayPal.jsx';
 import SizeGuide from './SizeGuide.jsx';
-import BagPopup from '../Others/BagPopup.jsx';
+import BagPopup from '../Bag-Related/BagPopup.jsx';
 import { useSelector, useDispatch } from 'react-redux';
 import { fill, toggleSize, selectSize, toggleQuan, selectQuan } from '../../redux/actions/index';
 import { connect } from 'react-redux';

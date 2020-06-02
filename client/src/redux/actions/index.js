@@ -251,3 +251,10 @@ export const addCompleteItem = (price, quantity) => {
     }
   };
 };
+
+export const openPlease = (selected) => {
+  return {
+    type: 'PLEASE_SELECT',
+    payload: selected
+  };
+};

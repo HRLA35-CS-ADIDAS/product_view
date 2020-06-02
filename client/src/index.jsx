@@ -18,5 +18,3 @@ ReactDOM.render(
         <App />
     </Provider>,
     document.getElementById('app'));
-
-// ReactDOM.render(<App />, document.getElementById('app'));
