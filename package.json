@@ -35,7 +35,7 @@
     "redux-thunk": "2.3.0",
     "redux-devtools-extension": "2.13.8",
     "sqlite3": "^4.0.6",
-    "axios": "0.19.2",
+    "axios": "0.21.1",
     "react-image-magnify": "^2.7.4",
     "react-modal": "^3.11.1",
     "react-slick": "^0.25.2",
